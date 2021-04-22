@@ -1,0 +1,26 @@
+{
+  "name": "svelte-vega",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "src",
+    "esm",
+    "lib",
+    "types"
+  ],
+  "devDependencies": {
+    "@tsconfig/svelte": "^1.0.10",
+    "vega-embed": "^6.17.0",
+    "fast-deep-equal": "^3.1.1"
+  },
+  "peerDependencies": {
+    "vega": "*",
+    "vega-lite": "*"
+  },
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  }
+}

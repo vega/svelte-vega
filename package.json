@@ -1,0 +1,30 @@
+{
+  "name": "svelte-vega-monorepo",
+  "version": "1.0.0",
+  "description": "Providing a Svelte Vega component and a demo for it.",
+  "author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io)",
+  "keywords": [],
+  "private": true,
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "vega": "^5.20.2",
+    "vega-lite": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=10.16.0",
+    "npm": ">=6.8.0",
+    "yarn": ">=1.13.0"
+  },
+  "workspaces": [
+    "./packages/*"
+  ],
+  "browserslist": [
+    "last 3 chrome versions",
+    "last 3 firefox versions",
+    "last 3 safari versions",
+    "last 3 edge versions"
+  ],
+  "scripts": {
+    "storybook": "cd packages/demo && yarn storybook"
+  }
+}
