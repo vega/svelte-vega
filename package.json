@@ -1,12 +1,37 @@
 {
   "name": "svelte-vega-monorepo",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Providing a Svelte Vega component and a demo for it.",
   "author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io)",
   "keywords": [],
+  "repository": "git@github.com:vega/svelte-vega.git",
+  "bugs": {
+    "url": "https://github.com/vega/svelte-vega/issues"
+  },
   "private": true,
-  "license": "Apache-2.0",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "postpublish": "git push; git push --tags",
+    "prebuild": "rm -rf ./dist",
+    "build": "cd packages/svelte-vega && yarn build",
+    "lint": "eslint . --ext .js,.svelte,.ts",
+    "lint:fix": "yarn lint --fix",
+    "storybook": "cd packages/demo && yarn storybook"
+  },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.13.14",
+    "@tsconfig/svelte": "^1.0.10",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^7.24.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-svelte3": "^3.1.2",
+    "typescript": "^4.2.4",
     "vega": "^5.20.2",
     "vega-lite": "^5.1.0"
   },
@@ -24,7 +49,9 @@
     "last 3 safari versions",
     "last 3 edge versions"
   ],
-  "scripts": {
-    "storybook": "cd packages/demo && yarn storybook"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

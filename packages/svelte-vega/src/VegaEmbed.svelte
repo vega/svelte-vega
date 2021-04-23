@@ -2,8 +2,9 @@
   import { onDestroy, onMount } from "svelte";
   import type { View } from "vega";
   import vegaEmbed from "vega-embed";
+  import type { EmbedOptions, VisualizationSpec } from "vega-embed";
   import { NOOP } from "./constants";
-  import type { ViewListener, VegaEmbedProps, SignalListeners } from "./types";
+  import type { ViewListener, SignalListeners } from "./types";
   import addSignalListenersToView from "./utils/addSignalListenersToView";
   import combineSpecWithDimension from "./utils/combineSpecWithDimensions";
   import computeSpecChanges from "./utils/computeSpecChanges";
@@ -11,33 +12,34 @@
   import removeSignalListenersFromView from "./utils/removeSignalListenersFromView";
   import shallowEqual from "./utils/shallowEqual";
 
-  export let props: VegaEmbedProps;
+  export let options: EmbedOptions;
+  export let spec: VisualizationSpec;
   export let onNewView: ViewListener = NOOP;
   export let signalListeners: SignalListeners = {};
   export let onError: (error: Error) => void = NOOP;
 
-  let prevProps: VegaEmbedProps = { spec: {} };
+  let prevOptions: EmbedOptions = {};
   let prevSignalListeners: SignalListeners = {};
+  let prevSpec: VisualizationSpec = {};
 
   let chartContainer: HTMLElement;
   let viewPromise: Promise<View | undefined> | undefined;
 
   $: {
-    const fieldSet = getUniqueFieldNames([props, prevProps]) as Set<
-      keyof VegaEmbedProps
+    const fieldSet = getUniqueFieldNames([options, prevOptions]) as Set<
+      keyof EmbedOptions
     >;
-    fieldSet.delete("spec");
     fieldSet.delete("width");
     fieldSet.delete("height");
 
     // only create a new view if neccessary
-    if (Array.from(fieldSet).some((f) => props[f] !== prevProps[f])) {
+    if (Array.from(fieldSet).some((f) => options[f] !== prevOptions[f])) {
       clearView();
       createView();
     } else {
       const specChanges = computeSpecChanges(
-        combineSpecWithDimension(props),
-        combineSpecWithDimension(prevProps)
+        combineSpecWithDimension(spec, options),
+        combineSpecWithDimension(prevSpec, prevOptions)
       );
       const newSignalListeners = signalListeners;
       const oldSignalListeners = prevSignalListeners;
@@ -81,8 +83,9 @@
         });
       }
     }
-    prevProps = props;
+    prevOptions = options;
     prevSignalListeners = signalListeners;
+    prevSpec = spec;
   }
 
   onMount(() => {
@@ -94,8 +97,7 @@
   });
 
   function createView() {
-    const { spec, ...options } = props;
-    const finalSpec = combineSpecWithDimension(props);
+    const finalSpec = combineSpecWithDimension(spec, options);
     viewPromise = vegaEmbed(chartContainer, finalSpec, options)
       .then(({ view }) => {
         if (addSignalListenersToView(view, signalListeners)) {
@@ -116,7 +118,7 @@
     viewPromise = undefined;
   }
 
-  export function modifyView(action: ViewListener) {
+  export function modifyView(action: ViewListener): void {
     if (viewPromise) {
       viewPromise
         .then((view) => {

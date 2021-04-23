@@ -1,6 +1,13 @@
 {
   "name": "svelte-vega-demo",
   "version": "1.0.0",
+  "description": "Demos for svelte-vega",
+  "author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io)",
+  "keywords": [],
+  "repository": "git@github.com:vega/svelte-vega.git",
+  "bugs": {
+    "url": "https://github.com/vega/svelte-vega/issues"
+  },
   "main": "lib/index.js",
   "module": "esm/index.js",
   "files": [
@@ -25,7 +32,7 @@
     "svelte-preprocess": "^4.3.0",
     "vega-embed": "^6.17.0"
   },
-  "license": "Apache-2.0",
+  "license": "BSD-3-Clause",
   "publishConfig": {
     "access": "public"
   },

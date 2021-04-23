@@ -1,18 +1,16 @@
 <script lang="ts">
+  import type { EmbedOptions, VisualizationSpec } from "vega-embed";
+
   import { NOOP } from "./constants";
-  import type {
-    VegaEmbedProps,
-    View,
-    ViewListener,
-    SignalListeners,
-  } from "./types";
+  import type { View, ViewListener, SignalListeners } from "./types";
   import shallowEqual from "./utils/shallowEqual";
   import updateMultipleDatasetsInView from "./utils/updateMultipleDatasetInView";
   import VegaEmbed from "./VegaEmbed.svelte";
 
-  export let props: VegaEmbedProps;
+  export let spec: VisualizationSpec;
+  export let options: EmbedOptions = {};
   export let data: Record<string, unknown> = {};
-  export let onNewView: ViewListener = () => {};
+  export let onNewView: ViewListener = NOOP;
   export let signalListeners: SignalListeners = {};
   export let onError: (error: Error) => void = NOOP;
 
@@ -32,7 +30,7 @@
   }
 
   function update() {
-    if (vegaEmbed && Object.keys(data).length > 0) {
+    if (vegaEmbed && data && Object.keys(data).length > 0) {
       vegaEmbed.modifyView((view: View) => {
         updateMultipleDatasetsInView(view, data);
         view.resize().run();
@@ -43,7 +41,8 @@
 
 <VegaEmbed
   bind:this={vegaEmbed}
-  {props}
+  {spec}
+  {options}
   onNewView={handleNewView}
   {onError}
   {signalListeners}

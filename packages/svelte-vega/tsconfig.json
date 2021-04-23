@@ -1,0 +1,10 @@
+{
+	"extends": "@tsconfig/svelte/tsconfig.json",
+	"compilerOptions": {
+		"strict": true,
+   	"types": ["svelte", "node"],
+   	"noImplicitAny": true,
+ 	},
+	"include": ["src/**/*", "src/node_modules/**/*", "packages/svelte-vega/src/util", "packages/svelte-vega/src/types", "packages/svelte-vega/constants.ts", "packages/demo"],
+	"exclude": ["node_modules/*", "__sapper__/*", "static/*"]
+}

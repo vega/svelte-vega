@@ -11,8 +11,7 @@
     tooltip: (...args: unknown[]) => void;
   } = { tooltip: (...args) => (info = JSON.stringify(args)) };
 
-  $: props = {
-    spec: spec,
+  $: options = {
     signalListeners: handlers,
   };
 
@@ -54,7 +53,7 @@
       <code>&lt;Vega&gt;</code> Svelte Component
     </h3>
     Will recompile when spec changes and update when data changes.
-    <Vega {data} {props} signalListeners={handlers} />
+    <Vega {data} {spec} {options} signalListeners={handlers} />
     <div>
       Hover info: <code>{info}</code>
     </div>

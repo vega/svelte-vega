@@ -3,7 +3,7 @@ import type { View, SignalListeners } from "../types";
 export default function addSignalListenersToView(
   view: View,
   signalListeners: SignalListeners
-) {
+): boolean {
   const signalNames = Object.keys(signalListeners);
   signalNames.forEach((signalName) => {
     try {

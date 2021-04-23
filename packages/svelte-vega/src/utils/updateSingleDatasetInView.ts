@@ -5,8 +5,8 @@ import type { View } from "../types";
 export default function updateSingleDatasetInView(
   view: View,
   name: string,
-  value: unknown
-) {
+  value: any
+): void {
   if (value) {
     if (isFunction(value)) {
       value(view.data(name));

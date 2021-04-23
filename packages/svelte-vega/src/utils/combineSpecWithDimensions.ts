@@ -1,10 +1,10 @@
-import type { VegaEmbedProps } from "../types";
-import type { VisualizationSpec } from "vega-embed";
+import type { EmbedOptions, VisualizationSpec } from "vega-embed";
 
 export default function combineSpecWithDimension(
-  props: VegaEmbedProps
+  spec: VisualizationSpec,
+  options: EmbedOptions
 ): VisualizationSpec {
-  const { spec, width, height } = props;
+  const { width, height } = options;
   if (typeof width !== "undefined" && typeof height !== "undefined") {
     return { ...spec, width, height };
   }

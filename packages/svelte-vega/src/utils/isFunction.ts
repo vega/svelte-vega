@@ -1,6 +1,4 @@
-export default function isFunction(
-  functionToCheck: unknown
-): functionToCheck is Function {
+export default function isFunction(functionToCheck: unknown): boolean {
   const getType = {};
 
   return (

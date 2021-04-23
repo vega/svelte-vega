@@ -1,1 +1,3 @@
-export const NOOP = () => {};
+export const NOOP = (): void => {
+  // Do nothing
+};

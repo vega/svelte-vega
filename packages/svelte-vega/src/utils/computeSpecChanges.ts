@@ -11,7 +11,7 @@ interface SpecChanges {
 export default function computeSpecChanges(
   newSpec: VisualizationSpec,
   oldSpec: VisualizationSpec
-) {
+): false | SpecChanges {
   if (newSpec === oldSpec) return false;
 
   const changes: SpecChanges = {
