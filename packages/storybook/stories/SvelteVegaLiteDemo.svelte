@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { EmbedOptions } from "vega-embed";
-  import Vega from "../../svelte-vega/src/Vega.svelte";
+  import VegaLite from "../../svelte-vega/src/VegaLite.svelte";
   import data1 from "./data1.json";
   import spec1 from "./spec1";
   import spec2 from "./spec2";
@@ -49,10 +49,10 @@
   <button on:click={handleUpdateData}>Update Data</button>
   <div class="content">
     <h3>
-      <code>&lt;Vega&gt;</code> Svelte Component
+      <code>&lt;VegaLite&gt;</code> Svelte Component
     </h3>
     Will recompile when spec changes and update when data changes.
-    <Vega {data} {spec} {options} signalListeners={handlers} />
+    <VegaLite {data} {spec} {options} signalListeners={handlers} />
     <div>
       Hover info: <code>{info}</code>
     </div>

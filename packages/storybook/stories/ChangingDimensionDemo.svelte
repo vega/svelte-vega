@@ -1,12 +1,18 @@
 <script lang="ts">
+  import { onDestroy, onMount } from "svelte";
   import type { EmbedOptions } from "vega-embed";
   import Vega from "../../svelte-vega/src/Vega.svelte";
   import data1 from "./data1.json";
   import spec1 from "./spec1";
   import spec2 from "./spec2";
 
-  export let options: EmbedOptions = {};
-
+  let options: EmbedOptions = {
+    width: 100,
+    height: 100,
+    padding: 20,
+  };
+  let grow = true;
+  let interval: NodeJS.Timeout;
   let info = "";
   let data = data1;
   let spec = spec1;
@@ -32,6 +38,22 @@
     }
     data = { table };
   }
+
+  onMount(() => {
+    interval = setInterval(() => {
+      options = {
+        ...options,
+        width: options.width! + (grow ? 1 : -1),
+        height: options.height! + (grow ? 1 : -1),
+      };
+      grow =
+        (grow && options.width! < 400) || (!grow && options.width! === 100);
+    }, 10);
+  });
+
+  onDestroy(() => {
+    clearInterval(interval);
+  });
 </script>
 
 <main>
