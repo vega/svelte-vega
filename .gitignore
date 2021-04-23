@@ -7,7 +7,7 @@ yarn.lock
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode
 !.vscode/tasks.json
 !.vscode/launch.json
 *.code-workspace
@@ -21,3 +21,4 @@ yarn.lock
 
 _gh-pages
 dist
+build
