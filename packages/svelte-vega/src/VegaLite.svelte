@@ -1,11 +1,25 @@
 <script lang="ts">
-  import type { VegaEmbedProps } from "./types";
   import Vega from "./Vega.svelte";
-  import type { Mode } from "vega-embed";
+  import type { EmbedOptions, Mode, VisualizationSpec } from "vega-embed";
+  import type { ViewListener } from "./types";
+  import type { SignalListeners } from "../dist/ts/types";
+  import { NOOP } from "./constants";
 
-  export let props: VegaEmbedProps;
+  export let spec: VisualizationSpec;
+  export let options: EmbedOptions = {};
+  export let data: Record<string, unknown> = {};
+  export let onNewView: ViewListener = NOOP;
+  export let signalListeners: SignalListeners = {};
+  export let onError: (error: Error) => void = NOOP;
   const mode = "vega-lite" as Mode;
-  $: vegaLiteProps = { ...props, mode: mode };
+  $: vegaLiteOptions = { ...options, mode: mode };
 </script>
 
-<Vega props={vegaLiteProps} />
+<Vega
+  {spec}
+  {data}
+  {onNewView}
+  {signalListeners}
+  {onError}
+  options={vegaLiteOptions}
+/>
