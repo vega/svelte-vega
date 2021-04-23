@@ -16,7 +16,8 @@
     "build": "cd packages/svelte-vega && yarn build",
     "lint": "eslint . --ext .js,.svelte,.ts",
     "lint:fix": "yarn lint --fix",
-    "storybook": "cd packages/demo && yarn storybook"
+    "storybook": "cd packages/storybook && yarn storybook",
+    "sample": "yarn build && cd packages/sample-project && yarn dev"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",

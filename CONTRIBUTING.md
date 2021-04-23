@@ -38,6 +38,12 @@ svelte-vega/
 yarn storybook
 ```
 
+#### Run sample
+
+```sh
+yarn sample
+```
+
 ### Committing
 
 This repository follows

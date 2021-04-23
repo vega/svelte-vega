@@ -1,0 +1,41 @@
+{
+  "name": "svelte-vega-sample",
+  "version": "1.0.0",
+  "author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io)",
+  "keywords": [],
+  "repository": "git@github.com:vega/svelte-vega.git",
+  "bugs": {
+    "url": "https://github.com/vega/svelte-vega/issues"
+  },
+  "private": true,
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear",
+    "validate": "svelte-check"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "@tsconfig/svelte": "^1.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "svelte-check": "^1.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "svelte-vega": "file:../svelte-vega",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0",
+    "vega": "^5.20.2",
+    "vega-embed": "^6.17.0",
+    "vega-lite": "^5.1.0"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
+  }
+}
