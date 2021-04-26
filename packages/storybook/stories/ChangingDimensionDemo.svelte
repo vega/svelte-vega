@@ -1,4 +1,5 @@
 <script lang="ts">
+  /* global NodeJS */
   import { onDestroy, onMount } from "svelte";
   import type { EmbedOptions } from "vega-embed";
   import Vega from "../../svelte-vega/src/Vega.svelte";
@@ -43,11 +44,12 @@
     interval = setInterval(() => {
       options = {
         ...options,
-        width: options.width! + (grow ? 1 : -1),
-        height: options.height! + (grow ? 1 : -1),
+        width: (options.width ? options.width : 0) + (grow ? 1 : -1),
+        height: (options.height ? options.height : 0) + (grow ? 1 : -1),
       };
       grow =
-        (grow && options.width! < 400) || (!grow && options.width! === 100);
+        (grow && (options.width ? options.width : 0) < 400) ||
+        (!grow && (options.width ? options.width : 0) === 100);
     }, 10);
   });
 
