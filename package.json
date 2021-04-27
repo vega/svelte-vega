@@ -14,6 +14,8 @@
     "postpublish": "git push; git push --tags",
     "prebuild": "rm -rf ./dist",
     "build": "cd packages/svelte-vega && yarn build",
+    "build:sample": "cd packages/sample-project && yarn build",
+    "build:storybook": "cd packages/storybook && yarn demo:build",
     "lint": "eslint . --ext .js,.svelte,.ts",
     "lint:fix": "yarn lint --fix",
     "storybook": "cd packages/storybook && yarn storybook",

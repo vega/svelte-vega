@@ -29,3 +29,12 @@ jobs:
 
       - name: Lint
         run: yarn lint
+
+      - name: Build
+        run: yarn build
+
+      - name: Build Sample
+        run: yarn build:sample
+
+      - name: Build Storybook
+        run: yarn build:storybook
