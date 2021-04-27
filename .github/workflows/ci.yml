@@ -27,9 +27,6 @@ jobs:
       - name: Install Node dependencies
         run: yarn --frozen-lockfile
 
-      - name: Lint
-        run: yarn lint
-
       - name: Build
         run: yarn build
 
@@ -38,3 +35,6 @@ jobs:
 
       - name: Build Storybook
         run: yarn build:storybook
+
+      - name: Lint
+        run: yarn lint
