@@ -28,12 +28,11 @@
     prevData = data;
   }
 
-  function update() {
+  async function update() {
     if (vegaEmbed && data && Object.keys(data).length > 0) {
-      vegaEmbed.modifyView((view: View) => {
-        updateMultipleDatasetsInView(view, data);
-        view.resize().run();
-      });
+      const {view} = vegaEmbed.result!; // TODO: can this be null?
+      updateMultipleDatasetsInView(view, data);
+      await view.resize().runAsync();
     }
   }
 </script>
