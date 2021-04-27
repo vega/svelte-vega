@@ -1,5 +1,4 @@
 <script lang="ts">
-  /* global NodeJS */
   import { onDestroy, onMount } from "svelte";
   import type { EmbedOptions } from "vega-embed";
   import Vega from "../../svelte-vega/src/Vega.svelte";
@@ -13,7 +12,7 @@
     padding: 20,
   };
   let grow = true;
-  let interval: NodeJS.Timeout;
+  let interval: ReturnType<typeof setTimeout>;
   let info = "";
   let data = data1;
   let spec = spec1;
