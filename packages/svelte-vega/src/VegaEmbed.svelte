@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
-  import vegaEmbed, { Result } from "vega-embed";
-  import type { EmbedOptions, VisualizationSpec } from "vega-embed";
+  import vegaEmbed from "vega-embed";
+  import type { EmbedOptions, VisualizationSpec, Result } from "vega-embed";
   import { NOOP } from "./constants";
   import type { ViewListener, SignalListeners } from "./types";
   import {
@@ -18,13 +18,13 @@
   export let onNewView: ViewListener = NOOP;
   export let signalListeners: SignalListeners = {};
   export let onError: (error: Error) => void = NOOP;
+  export let result: Result | undefined;
 
   let prevOptions: EmbedOptions = {};
   let prevSignalListeners: SignalListeners = {};
   let prevSpec: VisualizationSpec = {};
 
   let chartContainer: HTMLElement;
-  export let result: Result | undefined;
 
   $: {
     const fieldSet = getUniqueFieldNames([options, prevOptions]) as Set<
@@ -49,12 +49,12 @@
         if (specChanges.isExpensive) {
           clearView();
           createView();
-        } else {
+        } else if (result !== undefined) {
           const areSignalListenersChanged = !shallowEqual(
             newSignalListeners,
             oldSignalListeners
           );
-          const { view } = result!; // TODO: can result be null?
+          const { view } = result;
           if (specChanges.width !== false) {
             view.width(specChanges.width);
           }
@@ -71,8 +71,11 @@
           }
           view.runAsync();
         }
-      } else if (!shallowEqual(newSignalListeners, oldSignalListeners)) {
-        const { view } = result!; // TODO: can result be null?
+      } else if (
+        !shallowEqual(newSignalListeners, oldSignalListeners) &&
+        result !== undefined
+      ) {
+        const { view } = result;
         if (oldSignalListeners) {
           removeSignalListenersFromView(view, oldSignalListeners);
         }
