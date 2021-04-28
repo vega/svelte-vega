@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { EmbedOptions, VisualizationSpec } from "vega-embed";
+  import type { EmbedOptions, Result, VisualizationSpec } from "vega-embed";
 
   import { NOOP } from "./constants";
   import type { View, ViewListener, SignalListeners } from "./types";
@@ -14,7 +14,7 @@
   export let onError: (error: Error) => void = NOOP;
 
   let prevData: Record<string, unknown> = {};
-  let vegaEmbed: VegaEmbed;
+  let result: Result | undefined = undefined;
 
   const handleNewView: ViewListener = (view: View) => {
     update();
@@ -28,18 +28,17 @@
     prevData = data;
   }
 
-  function update() {
-    if (vegaEmbed && data && Object.keys(data).length > 0) {
-      vegaEmbed.modifyView((view: View) => {
-        updateMultipleDatasetsInView(view, data);
-        view.resize().run();
-      });
+  async function update() {
+    if (data && Object.keys(data).length > 0 && result !== undefined) {
+      const { view } = result;
+      updateMultipleDatasetsInView(view, data);
+      await view.resize().runAsync();
     }
   }
 </script>
 
 <VegaEmbed
-  bind:this={vegaEmbed}
+  bind:result
   {spec}
   {options}
   onNewView={handleNewView}

@@ -1,8 +1,7 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
-  import type { View } from "vega";
   import vegaEmbed from "vega-embed";
-  import type { EmbedOptions, VisualizationSpec } from "vega-embed";
+  import type { EmbedOptions, VisualizationSpec, Result } from "vega-embed";
   import { NOOP } from "./constants";
   import type { ViewListener, SignalListeners } from "./types";
   import {
@@ -19,13 +18,13 @@
   export let onNewView: ViewListener = NOOP;
   export let signalListeners: SignalListeners = {};
   export let onError: (error: Error) => void = NOOP;
+  export let result: Result | undefined;
 
   let prevOptions: EmbedOptions = {};
   let prevSignalListeners: SignalListeners = {};
   let prevSpec: VisualizationSpec = {};
 
   let chartContainer: HTMLElement;
-  let viewPromise: Promise<View | undefined> | undefined;
 
   $: {
     const fieldSet = getUniqueFieldNames([options, prevOptions]) as Set<
@@ -50,39 +49,40 @@
         if (specChanges.isExpensive) {
           clearView();
           createView();
-        } else {
+        } else if (result !== undefined) {
           const areSignalListenersChanged = !shallowEqual(
             newSignalListeners,
             oldSignalListeners
           );
-          modifyView((view) => {
-            if (specChanges.width !== false) {
-              view.width(specChanges.width);
+          const { view } = result;
+          if (specChanges.width !== false) {
+            view.width(specChanges.width);
+          }
+          if (specChanges.height !== false) {
+            view.height(specChanges.height);
+          }
+          if (areSignalListenersChanged) {
+            if (oldSignalListeners) {
+              removeSignalListenersFromView(view, oldSignalListeners);
             }
-            if (specChanges.height !== false) {
-              view.height(specChanges.height);
+            if (newSignalListeners) {
+              addSignalListenersToView(view, newSignalListeners);
             }
-            if (areSignalListenersChanged) {
-              if (oldSignalListeners) {
-                removeSignalListenersFromView(view, oldSignalListeners);
-              }
-              if (newSignalListeners) {
-                addSignalListenersToView(view, newSignalListeners);
-              }
-            }
-            view.run();
-          });
+          }
+          view.runAsync();
         }
-      } else if (!shallowEqual(newSignalListeners, oldSignalListeners)) {
-        modifyView((view) => {
-          if (oldSignalListeners) {
-            removeSignalListenersFromView(view, oldSignalListeners);
-          }
-          if (newSignalListeners) {
-            addSignalListenersToView(view, newSignalListeners);
-          }
-          view.run();
-        });
+      } else if (
+        !shallowEqual(newSignalListeners, oldSignalListeners) &&
+        result !== undefined
+      ) {
+        const { view } = result;
+        if (oldSignalListeners) {
+          removeSignalListenersFromView(view, oldSignalListeners);
+        }
+        if (newSignalListeners) {
+          addSignalListenersToView(view, newSignalListeners);
+        }
+        view.runAsync();
       }
     }
     prevOptions = options;
@@ -90,46 +90,35 @@
     prevSpec = spec;
   }
 
-  onMount(() => {
-    createView();
+  onMount(async () => {
+    await createView();
   });
 
   onDestroy(() => {
     clearView();
   });
 
-  function createView() {
+  async function createView() {
     const finalSpec = combineSpecWithDimension(spec, options);
-    viewPromise = vegaEmbed(chartContainer, finalSpec, options)
-      .then(({ view }) => {
-        if (addSignalListenersToView(view, signalListeners)) {
-          view.run();
-        }
-        return view;
-      })
-      .catch(handleError);
-    if (onNewView) {
-      modifyView(onNewView);
+    try {
+      result = await vegaEmbed(chartContainer, finalSpec, options);
+      const { view } = result;
+      if (addSignalListenersToView(view, signalListeners)) {
+        view.runAsync();
+      }
+      if (onNewView) {
+        onNewView(view);
+      }
+      return view;
+    } catch (e) {
+      handleError(e);
     }
   }
 
   function clearView() {
-    modifyView((view) => {
-      view.finalize();
-    });
-    viewPromise = undefined;
-  }
-
-  export function modifyView(action: ViewListener): void {
-    if (viewPromise) {
-      viewPromise
-        .then((view) => {
-          if (view) {
-            action(view);
-          }
-          return true;
-        })
-        .catch(handleError);
+    if (result) {
+      result.finalize();
+      result = undefined;
     }
   }
 
