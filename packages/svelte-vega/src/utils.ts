@@ -3,6 +3,8 @@ import { vega } from "vega-embed";
 import equal from "fast-deep-equal";
 import type { VisualizationSpec, EmbedOptions } from "vega-embed";
 
+export const WIDTH_HEIGHT = new Set(["width", "height"]);
+
 export function updateMultipleDatasetsInView(
   view: View,
   data: Record<string, unknown>
@@ -27,16 +29,19 @@ export function updateMultipleDatasetsInView(
   });
 }
 
-export function shallowEqual(
-  a: Record<string, unknown> = {},
-  b: Record<string, unknown> = {}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function shallowEqual<T extends Record<string, any>>(
+  a: T = {} as T,
+  b: T = {} as T,
+  ignore: Set<string> = new Set()
 ): boolean {
   const aKeys = Object.keys(a);
   const bKeys = Object.keys(b);
 
   return (
     a === b ||
-    (aKeys.length === bKeys.length && aKeys.every((key) => a[key] === b[key]))
+    (aKeys.length === bKeys.length &&
+      aKeys.filter((k) => !ignore.has(k)).every((key) => a[key] === b[key]))
   );
 }
 
@@ -102,10 +107,11 @@ export function computeSpecChanges(
     isExpensive: false,
   };
 
-  const fieldNames = getUniqueFieldNames([newSpec, oldSpec]);
+  const hasWidth = "width" in newSpec || "width" in oldSpec;
+  const hasHeight = "height" in newSpec || "height" in oldSpec;
 
   if (
-    fieldNames.has("width") &&
+    hasWidth &&
     (!("width" in newSpec) ||
       !("width" in oldSpec) ||
       newSpec.width !== oldSpec.width)
@@ -118,7 +124,7 @@ export function computeSpecChanges(
   }
 
   if (
-    fieldNames.has("height") &&
+    hasHeight &&
     (!("height" in newSpec) ||
       !("height" in oldSpec) ||
       newSpec.height !== oldSpec.height)
@@ -130,12 +136,12 @@ export function computeSpecChanges(
     }
   }
 
-  // Delete cheap fields
-  fieldNames.delete("width");
-  fieldNames.delete("height");
+  const fieldNames = [...getUniqueFieldNames([newSpec, oldSpec])].filter(
+    (f) => f !== "width" && f !== "height"
+  );
 
   if (
-    [...fieldNames].some(
+    fieldNames.some(
       (field) =>
         !(field in newSpec) ||
         !(field in oldSpec) ||

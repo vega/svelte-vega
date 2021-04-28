@@ -1,17 +1,17 @@
 <script lang="ts">
   import { createEventDispatcher, onDestroy, onMount } from "svelte";
+  import type { EmbedOptions, Result, VisualizationSpec } from "vega-embed";
   import vegaEmbed from "vega-embed";
-  import type { EmbedOptions, VisualizationSpec, Result } from "vega-embed";
   import { NOOP } from "./constants";
   import type { SignalListeners, View } from "./types";
   import {
-    shallowEqual,
-    removeSignalListenersFromView,
-    getUniqueFieldNames,
-    computeSpecChanges,
-    combineSpecWithDimension,
     addSignalListenersToView,
     updateMultipleDatasetsInView,
+    combineSpecWithDimension,
+    computeSpecChanges,
+    removeSignalListenersFromView,
+    shallowEqual,
+    WIDTH_HEIGHT,
   } from "./utils";
 
   export let options: EmbedOptions;
@@ -37,15 +37,8 @@
   }
 
   $: {
-    const fieldSet = getUniqueFieldNames([options, prevOptions]) as Set<
-      keyof EmbedOptions
-    >;
-    fieldSet.delete("width");
-    fieldSet.delete("height");
-
     // only create a new view if neccessary
-    if (Array.from(fieldSet).some((f) => options[f] !== prevOptions[f])) {
-      clearView();
+    if (!shallowEqual(options, prevOptions, WIDTH_HEIGHT)) {
       createView();
     } else {
       const specChanges = computeSpecChanges(
@@ -57,7 +50,6 @@
 
       if (specChanges) {
         if (specChanges.isExpensive) {
-          clearView();
           createView();
         } else if (result !== undefined) {
           const areSignalListenersChanged = !shallowEqual(
@@ -109,8 +101,12 @@
   });
 
   async function createView() {
+    clearView();
+
     const finalSpec = combineSpecWithDimension(spec, options);
+
     try {
+      console.info("Creating new view");
       result = await vegaEmbed(chartContainer, finalSpec, options);
       const { view } = result;
       if (addSignalListenersToView(view, signalListeners)) {
