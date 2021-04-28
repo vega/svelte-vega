@@ -1,25 +1,30 @@
 <script lang="ts">
+  import { createEventDispatcher } from "svelte";
+
   import type { EmbedOptions, Result, VisualizationSpec } from "vega-embed";
 
   import { NOOP } from "./constants";
-  import type { View, ViewListener, SignalListeners } from "./types";
+  import type { SignalListeners } from "./types";
   import { shallowEqual, updateMultipleDatasetsInView } from "./utils";
   import VegaEmbed from "./VegaEmbed.svelte";
 
   export let spec: VisualizationSpec;
   export let options: EmbedOptions = {};
   export let data: Record<string, unknown> = {};
-  export let onNewView: ViewListener = NOOP;
   export let signalListeners: SignalListeners = {};
   export let onError: (error: Error) => void = NOOP;
+
+  const dispatch = createEventDispatcher();
 
   let prevData: Record<string, unknown> = {};
   let result: Result | undefined = undefined;
 
-  const handleNewView: ViewListener = (view: View) => {
+  function handleNewView(event: CustomEvent) {
     update();
-    onNewView(view);
-  };
+    dispatch("onNewView", {
+      view: event.detail.view,
+    });
+  }
 
   $: {
     if (!shallowEqual(data, prevData)) {
@@ -41,7 +46,7 @@
   bind:result
   {spec}
   {options}
-  onNewView={handleNewView}
   {onError}
   {signalListeners}
+  on:newView={handleNewView}
 />

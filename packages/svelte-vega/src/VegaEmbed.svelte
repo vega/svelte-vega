@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { onDestroy, onMount } from "svelte";
+  import { createEventDispatcher, onDestroy, onMount } from "svelte";
   import vegaEmbed from "vega-embed";
   import type { EmbedOptions, VisualizationSpec, Result } from "vega-embed";
   import { NOOP } from "./constants";
-  import type { ViewListener, SignalListeners } from "./types";
+  import type { SignalListeners, View } from "./types";
   import {
     shallowEqual,
     removeSignalListenersFromView,
@@ -15,15 +15,15 @@
 
   export let options: EmbedOptions;
   export let spec: VisualizationSpec;
-  export let onNewView: ViewListener = NOOP;
   export let signalListeners: SignalListeners = {};
   export let onError: (error: Error) => void = NOOP;
   export let result: Result | undefined;
 
+  const dispatch = createEventDispatcher();
+
   let prevOptions: EmbedOptions = {};
   let prevSignalListeners: SignalListeners = {};
   let prevSpec: VisualizationSpec = {};
-
   let chartContainer: HTMLElement;
 
   $: {
@@ -106,9 +106,7 @@
       if (addSignalListenersToView(view, signalListeners)) {
         view.runAsync();
       }
-      if (onNewView) {
-        onNewView(view);
-      }
+      onNewView(view);
       return view;
     } catch (e) {
       handleError(e);
@@ -126,6 +124,12 @@
     onError(error);
     console.warn(error);
     return undefined;
+  }
+
+  function onNewView(view: View) {
+    dispatch("newView", {
+      view: view,
+    });
   }
 </script>
 
