@@ -18,7 +18,8 @@
     "lint": "eslint . --ext .js,.svelte,.ts",
     "lint:fix": "yarn lint --fix",
     "storybook": "cd packages/storybook && yarn storybook",
-    "sample": "yarn build && cd packages/sample-project && yarn --frozen-lockfile && yarn dev"
+    "sample": "yarn build && cd packages/sample-project && yarn --frozen-lockfile && yarn dev",
+    "clean": "rm -rf ./packages/svelte-vega/dist && rm -rf ./packages/storybook/_gh-pages && rm -rf && rm -rf ./packages/sample-project/public/build"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
