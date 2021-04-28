@@ -3,8 +3,7 @@
 
   import { NOOP } from "./constants";
   import type { View, ViewListener, SignalListeners } from "./types";
-  import shallowEqual from "./utils/shallowEqual";
-  import updateMultipleDatasetsInView from "./utils/updateMultipleDatasetInView";
+  import { shallowEqual, updateMultipleDatasetsInView } from "./utils";
   import VegaEmbed from "./VegaEmbed.svelte";
 
   export let spec: VisualizationSpec;

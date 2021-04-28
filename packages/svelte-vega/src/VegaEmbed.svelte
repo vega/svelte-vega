@@ -5,12 +5,14 @@
   import type { EmbedOptions, VisualizationSpec } from "vega-embed";
   import { NOOP } from "./constants";
   import type { ViewListener, SignalListeners } from "./types";
-  import addSignalListenersToView from "./utils/addSignalListenersToView";
-  import combineSpecWithDimension from "./utils/combineSpecWithDimensions";
-  import computeSpecChanges from "./utils/computeSpecChanges";
-  import getUniqueFieldNames from "./utils/getUniqueFieldNames";
-  import removeSignalListenersFromView from "./utils/removeSignalListenersFromView";
-  import shallowEqual from "./utils/shallowEqual";
+  import {
+    shallowEqual,
+    removeSignalListenersFromView,
+    getUniqueFieldNames,
+    computeSpecChanges,
+    combineSpecWithDimension,
+    addSignalListenersToView,
+  } from "./utils";
 
   export let options: EmbedOptions;
   export let spec: VisualizationSpec;
