@@ -8,24 +8,29 @@
   import githubImage from "./GitHub.png";
 
   let options: EmbedOptions = {
-    width: 100,
-    height: 100,
     padding: 20,
   };
   let grow = true;
   let interval: ReturnType<typeof setTimeout>;
   let info = "";
   let data = data1;
-  let spec = spec1;
+  let width = 100;
+  let height = 100;
+  let selectedSpec = spec1;
+  $: spec = {
+    ...selectedSpec,
+    width,
+    height,
+  };
   const handlers: {
     tooltip: (...args: unknown[]) => void;
   } = { tooltip: (...args) => (info = JSON.stringify(args)) };
 
   function handleToggleSpec() {
-    if (spec === spec1) {
-      spec = spec2;
+    if (selectedSpec === spec1) {
+      selectedSpec = spec2;
     } else {
-      spec = spec1;
+      selectedSpec = spec1;
     }
   }
 
@@ -42,14 +47,11 @@
 
   onMount(() => {
     interval = setInterval(() => {
-      options = {
-        ...options,
-        width: (options.width ? options.width : 0) + (grow ? 1 : -1),
-        height: (options.height ? options.height : 0) + (grow ? 1 : -1),
-      };
+      width = (spec.width ? spec.width : 0) + (grow ? 1 : -1);
+      height = (spec.height ? spec.height : 0) + (grow ? 1 : -1);
       grow =
-        (grow && (options.width ? options.width : 0) < 400) ||
-        (!grow && (options.width ? options.width : 0) === 100);
+        (grow && (spec.width ? spec.width : 0) < 400) ||
+        (!grow && (spec.width ? spec.width : 0) === 100);
     }, 10);
   });
 
