@@ -17,5 +17,10 @@ jobs:
       - uses: actions/setup-node@v2
       - name: Install Node dependencies
         run: yarn --frozen-lockfile
-      - name: Upload to pages
-        run: cd packages/storybook && yarn deploy-demo
+      - name: Build
+        run: cd packages/storybook && yarn demo:build
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.1
+        with:
+          branch: gh-pages
+          folder: packages/storybook/_gh-pages
