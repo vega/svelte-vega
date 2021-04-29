@@ -102,11 +102,9 @@
   async function createView() {
     clearView();
 
-    const finalSpec = combineSpecWithDimension(spec, options);
-
     try {
       console.info("Creating new view");
-      result = await vegaEmbed(chartContainer, finalSpec, options);
+      result = await vegaEmbed(chartContainer, spec, options);
       const { view } = result;
       if (addSignalListenersToView(view, signalListeners)) {
         view.runAsync();
