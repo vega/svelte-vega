@@ -1,10 +1,6 @@
-import type { EmbedOptions, Result, VisualizationSpec } from "vega-embed";
+import type { Result } from "vega-embed";
 
 export type View = Result["view"];
-
-export type VegaEmbedProps = {
-  spec: VisualizationSpec;
-} & EmbedOptions;
 
 export type SignalListener = (name: string, value: unknown) => void;
 
