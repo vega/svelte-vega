@@ -35,64 +35,62 @@
   }
 
   $: {
-    // only create a new view if neccessary
-    if (!shallowEqual(options, prevOptions, WIDTH_HEIGHT)) {
-      createView();
-    } else {
-      const specChanges = computeSpecChanges(
-        combineSpecWithDimension(spec, options),
-        combineSpecWithDimension(prevSpec, prevOptions)
-      );
-      const newSignalListeners = signalListeners;
-      const oldSignalListeners = prevSignalListeners;
+    if (chartContainer !== undefined) {
+      // only create a new view if neccessary
+      if (!shallowEqual(options, prevOptions, WIDTH_HEIGHT)) {
+        createView();
+      } else {
+        const specChanges = computeSpecChanges(
+          combineSpecWithDimension(spec, options),
+          combineSpecWithDimension(prevSpec, prevOptions)
+        );
+        const newSignalListeners = signalListeners;
+        const oldSignalListeners = prevSignalListeners;
 
-      if (specChanges) {
-        if (specChanges.isExpensive) {
-          createView();
-        } else if (result !== undefined) {
-          const areSignalListenersChanged = !shallowEqual(
-            newSignalListeners,
-            oldSignalListeners
-          );
+        if (specChanges) {
+          if (specChanges.isExpensive) {
+            createView();
+          } else if (result !== undefined) {
+            const areSignalListenersChanged = !shallowEqual(
+              newSignalListeners,
+              oldSignalListeners
+            );
+            const { view } = result;
+            if (specChanges.width !== false) {
+              view.width(specChanges.width);
+            }
+            if (specChanges.height !== false) {
+              view.height(specChanges.height);
+            }
+            if (areSignalListenersChanged) {
+              if (oldSignalListeners) {
+                removeSignalListenersFromView(view, oldSignalListeners);
+              }
+              if (newSignalListeners) {
+                addSignalListenersToView(view, newSignalListeners);
+              }
+            }
+            view.runAsync();
+          }
+        } else if (
+          !shallowEqual(newSignalListeners, oldSignalListeners) &&
+          result !== undefined
+        ) {
           const { view } = result;
-          if (specChanges.width !== false) {
-            view.width(specChanges.width);
+          if (oldSignalListeners) {
+            removeSignalListenersFromView(view, oldSignalListeners);
           }
-          if (specChanges.height !== false) {
-            view.height(specChanges.height);
-          }
-          if (areSignalListenersChanged) {
-            if (oldSignalListeners) {
-              removeSignalListenersFromView(view, oldSignalListeners);
-            }
-            if (newSignalListeners) {
-              addSignalListenersToView(view, newSignalListeners);
-            }
+          if (newSignalListeners) {
+            addSignalListenersToView(view, newSignalListeners);
           }
           view.runAsync();
         }
-      } else if (
-        !shallowEqual(newSignalListeners, oldSignalListeners) &&
-        result !== undefined
-      ) {
-        const { view } = result;
-        if (oldSignalListeners) {
-          removeSignalListenersFromView(view, oldSignalListeners);
-        }
-        if (newSignalListeners) {
-          addSignalListenersToView(view, newSignalListeners);
-        }
-        view.runAsync();
       }
+      prevOptions = options;
+      prevSignalListeners = signalListeners;
+      prevSpec = spec;
     }
-    prevOptions = options;
-    prevSignalListeners = signalListeners;
-    prevSpec = spec;
   }
-
-  onMount(async () => {
-    await createView();
-  });
 
   onDestroy(() => {
     clearView();
@@ -100,7 +98,6 @@
 
   async function createView() {
     clearView();
-
     try {
       console.info("Creating new view");
       result = await vegaEmbed(chartContainer, spec, options);
@@ -109,7 +106,6 @@
         view.runAsync();
       }
       onNewView(view);
-      return view;
     } catch (e) {
       handleError(e);
     }
