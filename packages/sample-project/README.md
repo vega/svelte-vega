@@ -5,4 +5,5 @@ If you want to build something using our `Vega` component, you just need to inst
 
 ## Dependencies
 
-To run this project, svelte-vega needs to be built first.
+To run this project, `svelte-vega` needs to be built first.
+It is easiest to use from the [main repository](https://github.com/vega/svelte-vega).
