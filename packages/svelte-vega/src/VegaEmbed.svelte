@@ -2,7 +2,7 @@
   import { createEventDispatcher, onDestroy, onMount } from "svelte";
   import type { EmbedOptions, Result, VisualizationSpec } from "vega-embed";
   import vegaEmbed from "vega-embed";
-  import { NOOP } from "./constants";
+  import { NOOP, WIDTH_HEIGHT } from "./constants";
   import type { SignalListeners, View } from "./types";
   import {
     addSignalListenersToView,
@@ -11,7 +11,6 @@
     computeSpecChanges,
     removeSignalListenersFromView,
     shallowEqual,
-    WIDTH_HEIGHT,
   } from "./utils";
 
   export let options: EmbedOptions;

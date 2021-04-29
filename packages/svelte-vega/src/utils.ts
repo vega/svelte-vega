@@ -3,8 +3,6 @@ import { vega } from "vega-embed";
 import equal from "fast-deep-equal";
 import type { VisualizationSpec, EmbedOptions } from "vega-embed";
 
-export const WIDTH_HEIGHT = new Set(["width", "height"]);
-
 export function updateMultipleDatasetsInView(
   view: View,
   data: Record<string, unknown>
