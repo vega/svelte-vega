@@ -1,0 +1,21 @@
+name: Pages
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+
+    name: Publish GitHub Pages
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: Install Node dependencies
+        run: yarn --frozen-lockfile
+      - name: Upload to pages
+        run: cd packages/storybook && yarn deploy-demo
