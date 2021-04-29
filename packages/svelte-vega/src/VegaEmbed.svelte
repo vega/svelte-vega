@@ -11,20 +11,30 @@
     computeSpecChanges,
     combineSpecWithDimension,
     addSignalListenersToView,
+    updateMultipleDatasetsInView,
   } from "./utils";
 
   export let options: EmbedOptions;
   export let spec: VisualizationSpec;
   export let signalListeners: SignalListeners = {};
   export let onError: (error: Error) => void = NOOP;
-  export let result: Result | undefined;
+  export let data: Record<string, unknown> = {};
 
   const dispatch = createEventDispatcher();
 
+  let result: Result | undefined = undefined;
   let prevOptions: EmbedOptions = {};
   let prevSignalListeners: SignalListeners = {};
   let prevSpec: VisualizationSpec = {};
+  let prevData: Record<string, unknown> = {};
   let chartContainer: HTMLElement;
+
+  $: {
+    if (!shallowEqual(data, prevData)) {
+      update();
+    }
+    prevData = data;
+  }
 
   $: {
     const fieldSet = getUniqueFieldNames([options, prevOptions]) as Set<
@@ -127,9 +137,18 @@
   }
 
   function onNewView(view: View) {
-    dispatch("newView", {
+    update();
+    dispatch("onNewView", {
       view: view,
     });
+  }
+
+  async function update() {
+    if (data && Object.keys(data).length > 0 && result !== undefined) {
+      const { view } = result;
+      updateMultipleDatasetsInView(view, data);
+      await view.resize().runAsync();
+    }
   }
 </script>
 
