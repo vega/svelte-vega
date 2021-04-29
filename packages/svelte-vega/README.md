@@ -77,5 +77,5 @@ For a example svelte project, see our [other package](https://github.com/vega/sv
   }
 </script>
 
-<Vega {data} {spec} />
+<VegaLite {data} {spec} />
 ```
