@@ -58,13 +58,11 @@ export default {
       type: "rect",
       from: { data: "table" },
       encode: {
-        enter: {
+        update: {
           x: { scale: "xscale", field: "category", offset: 1 },
           width: { scale: "xscale", band: 1, offset: -1 },
           y: { scale: "yscale", field: "amount" },
           y2: { scale: "yscale", value: 0 },
-        },
-        update: {
           fill: { value: "steelblue" },
         },
         hover: {
