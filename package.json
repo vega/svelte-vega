@@ -19,7 +19,8 @@
     "lint:fix": "yarn lint --fix",
     "storybook": "cd packages/storybook && yarn storybook",
     "sample": "yarn build && cd packages/sample-project && yarn --frozen-lockfile && yarn dev",
-    "clean": "rm -rf ./packages/svelte-vega/dist && rm -rf ./packages/storybook/_gh-pages && rm -rf && rm -rf ./packages/sample-project/public/build"
+    "clean": "rm -rf ./packages/svelte-vega/dist && rm -rf ./packages/storybook/_gh-pages && rm -rf && rm -rf ./packages/sample-project/public/build",
+    "release": "cd packages/svelte-vega && yarn semantic-release"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
@@ -33,6 +34,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-svelte3": "^3.1.2",
+    "lerna": "^4.0.0",
+    "semantic-release": "^17.4.2",
     "typescript": "^4.2.4",
     "vega": "^5.20.2",
     "vega-lite": "^5.1.0"
