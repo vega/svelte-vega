@@ -2,7 +2,7 @@
   import { createEventDispatcher, onDestroy, onMount } from "svelte";
   import type { EmbedOptions, Result, VisualizationSpec } from "vega-embed";
   import vegaEmbed from "vega-embed";
-  import { NOOP, WIDTH_HEIGHT } from "./constants";
+  import { WIDTH_HEIGHT } from "./constants";
   import type { SignalListeners, View } from "./types";
   import {
     addSignalListenersToView,
@@ -16,7 +16,6 @@
   export let options: EmbedOptions;
   export let spec: VisualizationSpec;
   export let signalListeners: SignalListeners = {};
-  export let onError: (error: Error) => void = NOOP;
   export let data: Record<string, unknown> = {};
 
   const dispatch = createEventDispatcher();
@@ -124,7 +123,9 @@
   }
 
   function handleError(error: Error) {
-    onError(error);
+    dispatch("onError", {
+      error: error,
+    });
     console.warn(error);
     return undefined;
   }
