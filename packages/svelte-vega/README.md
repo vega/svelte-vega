@@ -1,4 +1,4 @@
-# react-vega [![NPM version][npm-image]][npm-url]
+# svelte-vega [![NPM version][npm-image]][npm-url]
 
 > Easy usage of `vega` or `vega-lite` in `svelte` applications!
 
