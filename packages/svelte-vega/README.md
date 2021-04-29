@@ -7,6 +7,12 @@
 ## Install
 
 ```bash
+yarn add svelte-vega
+```
+
+or
+
+```bash
 npm install svelte-vega --save
 ```
 
