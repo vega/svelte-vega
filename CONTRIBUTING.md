@@ -9,9 +9,6 @@ processes.
 [lerna](https://github.com/lerna/lerna/) is used to manage versions and dependencies between
 packages in this monorepo.
 
-Each package can inherit settings from project root and override its own build config, linting, and
-testing via beemo. You run all commands from root of the project except storybook.
-
 ```
 svelte-vega/
   lerna.json
