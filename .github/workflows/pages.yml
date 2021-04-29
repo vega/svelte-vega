@@ -18,7 +18,7 @@ jobs:
       - name: Install Node dependencies
         run: yarn --frozen-lockfile
       - name: Build
-        run: cd packages/storybook && yarn demo:build
+        run: yarn build:storybook
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
