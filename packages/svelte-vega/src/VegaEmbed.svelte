@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher, onDestroy, onMount } from "svelte";
+  import { createEventDispatcher, onDestroy } from "svelte";
   import type { EmbedOptions, Result, VisualizationSpec } from "vega-embed";
   import vegaEmbed from "vega-embed";
   import { WIDTH_HEIGHT } from "./constants";
