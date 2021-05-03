@@ -42,7 +42,7 @@ export default {
 
 ## Example Code
 
-The following contains code samples for Svelte Vega and VegaLite components using TypeScript.
+The following contains code samples for Svelte Vega and Vega-Lite components using TypeScript.
 For an example Svelte project using `svelte-vega`, see the [example application](https://github.com/vega/svelte-vega/tree/main/packages/sample-project).
 
 ### Svelte `<Vega>` Component
