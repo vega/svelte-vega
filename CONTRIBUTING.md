@@ -6,12 +6,10 @@ processes.
 
 ### File organization
 
-[lerna](https://github.com/lerna/lerna/) is used to manage versions and dependencies between
-packages in this monorepo.
+We use [yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) to manage versions and dependencies between packages in this monorepo.
 
 ```
 svelte-vega/
-  lerna.json
   package.json
   ...
   packages/
