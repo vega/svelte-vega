@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "description": "Providing a Svelte Vega component and a demo for it.",
   "author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io)",
-  "keywords": [],
   "repository": "git@github.com:vega/svelte-vega.git",
   "bugs": {
     "url": "https://github.com/vega/svelte-vega/issues"
