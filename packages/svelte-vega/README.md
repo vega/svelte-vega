@@ -6,14 +6,35 @@
 
 ## Install
 
+In your Svelte project, install `svelte-vega` with the following:
+
 ```bash
+yarn add @rollup/plugin-json
 yarn add svelte-vega
 ```
 
 or
 
 ```bash
+npm install @rollup/plugin-json --save
 npm install svelte-vega --save
+```
+
+Then, you must add the JSON plugin `@rollup/plugin-json` to your `rollup.config.js` file.
+
+```javascript
+import json from "@rollup/plugin-json"
+
+...
+
+export default {
+
+ ...
+
+  plugins: [
+    json(),
+  ]
+}
 ```
 
 [npm-image]: https://img.shields.io/npm/v/svelte-vega.svg?style=flat-square
@@ -21,15 +42,16 @@ npm install svelte-vega --save
 
 ## Example Code
 
-The following contains code samples assuming you installed our package.
-For a example svelte project, see our [other package](https://github.com/vega/svelte-vega/tree/main/packages/sample-project).
+The following contains code samples for Svelte Vega and VegaLite components using TypeScript.
+For an example Svelte project using `svelte-vega`, see the [example application](https://github.com/vega/svelte-vega/tree/main/packages/sample-project).
 
 ### Svelte `<Vega>` Component
 
 ```typescript
 <script lang="ts">
-  import { Vega } from "svelte-vega";
   import type { VisualizationSpec } from "vega-embed";
+
+  import { Vega } from "svelte-vega";
 
   const data = {
     table: [
@@ -43,8 +65,9 @@ For a example svelte project, see our [other package](https://github.com/vega/sv
       { category: "H", amount: 87 },
     ],
   };
+
+  // For an example, see https://github.com/vega/svelte-vega/blob/main/packages/storybook/stories/spec1.ts
   const spec: VisualizationSpec = // any vega spec.
-  // for an example, see https://github.com/vega/svelte-vega/blob/main/packages/storybook/stories/spec1.ts
 </script>
 
 <Vega {data} {spec} />
@@ -54,8 +77,9 @@ For a example svelte project, see our [other package](https://github.com/vega/sv
 
 ```typescript
 <script lang="ts">
-  import { VegaLite } from "svelte-vega";
   import type { VisualizationSpec } from "vega-embed";
+
+  import { VegaLite } from "svelte-vega";
 
   const data = {
     table: [
@@ -69,6 +93,7 @@ For a example svelte project, see our [other package](https://github.com/vega/sv
       { category: "H", amount: 87 },
     ],
   };
+
   const spec: VisualizationSpec = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     description: "A simple bar chart with embedded data.",
