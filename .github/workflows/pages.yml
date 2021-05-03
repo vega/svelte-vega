@@ -17,7 +17,9 @@ jobs:
       - uses: actions/setup-node@v2
       - name: Install Node dependencies
         run: yarn --frozen-lockfile
-      - name: Build
+      - name: Build svelte-vega
+        run: yarn build
+      - name: Build the storybook
         run: yarn build:storybook
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1
