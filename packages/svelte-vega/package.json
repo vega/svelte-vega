@@ -1,6 +1,7 @@
 {
   "name": "svelte-vega",
   "version": "1.0.0",
+  "license": "BSD-3-Clause",
   "description": "Convert Vega spec into Svelte component.",
   "author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io)",
   "keywords": ["Vega-Lite", "Vega", "Visualization", "Svelte"],
@@ -47,8 +48,10 @@
     "vega": "*",
     "vega-lite": "*"
   },
-  "license": "BSD-3-Clause",
   "publishConfig": {
     "access": "public"
+  },
+  "release": {
+    "branches": ["main", "next"]
   }
 }
