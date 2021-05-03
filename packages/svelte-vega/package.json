@@ -50,8 +50,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "release": {
-    "branches": ["main", "next"]
   }
 }

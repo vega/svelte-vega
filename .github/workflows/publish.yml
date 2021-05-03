@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v2
       - name: Install Node dependencies
         run: yarn --frozen-lockfile
-      - run: yarn semantic-release
+      - run: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
