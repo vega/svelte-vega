@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { EmbedOptions } from "vega-embed";
-  import Vega from "../../svelte-vega/src/Vega.svelte";
+  import { Vega } from "svelte-vega";
   import data1 from "./data1.json";
   import spec1 from "./spec1";
   import spec2 from "./spec2";

@@ -1,8 +1,9 @@
 <script lang="ts">
-  import { Vega } from "svelte-vega";
   import type { Spec } from "vega";
+  import type { VisualizationSpec } from "vega-embed";
+  import { Vega, VegaLite } from "svelte-vega";
 
-  const data = {
+  let dataVL = {
     table: [
       { category: "A", amount: 28 },
       { category: "B", amount: 55 },
@@ -14,7 +15,32 @@
       { category: "H", amount: 87 },
     ],
   };
-  const spec: Spec = {
+  let specVL: VisualizationSpec = {
+    $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+    description: "A simple bar chart with embedded data.",
+    data: {
+      name: "table",
+    },
+    mark: "bar",
+    encoding: {
+      x: { field: "category", type: "nominal" },
+      y: { field: "amount", type: "quantitative" },
+    },
+  };
+
+  const dataV = {
+    table: [
+      { category: "A", amount: 28 },
+      { category: "B", amount: 55 },
+      { category: "C", amount: 43 },
+      { category: "D", amount: 91 },
+      { category: "E", amount: 81 },
+      { category: "F", amount: 53 },
+      { category: "G", amount: 19 },
+      { category: "H", amount: 87 },
+    ],
+  };
+  const specV: Spec = {
     $schema: "https://vega.github.io/schema/vega/v5.json",
     width: 400,
     height: 200,
@@ -110,7 +136,8 @@
 </script>
 
 <main>
-  <Vega {data} {spec} />
+  <Vega data={dataV} spec={specV} />
+  <VegaLite data={dataVL} spec={specVL} />
 </main>
 
 <style>

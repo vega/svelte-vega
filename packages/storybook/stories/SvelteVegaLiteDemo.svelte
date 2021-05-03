@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { EmbedOptions, VisualizationSpec } from "vega-embed";
-  import VegaLite from "../../svelte-vega/src/VegaLite.svelte";
+  import { VegaLite } from "svelte-vega";
   import data1 from "./data1.json";
   import githubImage from "./GitHub.png";
 
