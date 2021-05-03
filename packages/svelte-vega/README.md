@@ -37,7 +37,7 @@ export default {
 }
 ```
 
-[npm-image]: https://img.shields.io/npm/v/svelte-vega.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/svelte-vega.svg
 [npm-url]: https://npmjs.org/package/svelte-vega
 
 ## Example Code
