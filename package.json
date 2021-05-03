@@ -12,12 +12,12 @@
   "scripts": {
     "postpublish": "git push; git push --tags",
     "build": "yarn workspace svelte-vega build",
-    "build:sample": "yarn workspace svelte-vega build && yarn workspace svelte-vega-sample build",
-    "build:storybook": "yarn workspace svelte-vega build && yarn workspace svelte-vega-demo demo:build",
+    "build:sample": "yarn build && yarn workspace svelte-vega-sample build",
+    "build:storybook": "yarn build && yarn workspace svelte-vega-demo demo:build",
     "lint": "eslint . --ext .js,.svelte,.ts && yarn workspace svelte-vega validate",
     "lint:fix": "yarn lint --fix",
-    "storybook": "yarn workspace svelte-vega build && yarn workspace svelte-vega-demo storybook",
-    "sample": "yarn workspace svelte-vega build && yarn workspace svelte-vega-sample dev",
+    "storybook": "yarn build && yarn workspace svelte-vega-demo storybook",
+    "sample": "yarn build && yarn workspace svelte-vega-sample dev",
     "clean": "rm -rf ./packages/svelte-vega/dist && rm -rf ./packages/storybook/_gh-pages && rm -rf && rm -rf ./packages/sample-project/public/build",
     "release": "cd packages/svelte-vega && yarn semantic-release"
   },
