@@ -6,7 +6,7 @@ module.exports = {
   svelteOptions: {
     preprocess: sveltePreprocess(),
   },
-  addons: ["@storybook/addon-links", "@storybook/addon-actions"],
+  addons: [],
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: [/\.stories\.js$/, /index\.js$/],
