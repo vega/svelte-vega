@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { Spec } from "vega";
   import type { VisualizationSpec } from "vega-embed";
   import { Vega, VegaLite } from "svelte-vega";
 
@@ -40,7 +39,7 @@
       { category: "H", amount: 87 },
     ],
   };
-  const specV: Spec = {
+  const specV: VisualizationSpec = {
     $schema: "https://vega.github.io/schema/vega/v5.json",
     width: 400,
     height: 200,
