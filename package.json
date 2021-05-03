@@ -19,7 +19,7 @@
     "storybook": "yarn build && yarn workspace svelte-vega-demo storybook",
     "sample": "yarn build && yarn workspace svelte-vega-sample dev",
     "clean": "rm -rf ./packages/svelte-vega/dist && rm -rf ./packages/storybook/_gh-pages && rm -rf && rm -rf ./packages/sample-project/public/build",
-    "release": "cd packages/svelte-vega && yarn semantic-release"
+    "release": "yarn workspace svelte-vega semantic-release"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
