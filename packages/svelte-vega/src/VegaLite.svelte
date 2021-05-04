@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { EmbedOptions, Mode, VisualizationSpec } from "vega-embed";
-  import type { SignalListeners } from "./types";
+  import type { EmbedOptions, Mode } from "vega-embed";
+  import type { SignalListeners, VisualizationSpec } from "./types";
   import VegaEmbed from "./VegaEmbed.svelte";
 
   export let spec: VisualizationSpec;

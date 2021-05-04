@@ -1,9 +1,9 @@
 <script lang="ts">
   import { createEventDispatcher, onDestroy } from "svelte";
-  import type { EmbedOptions, Result, VisualizationSpec } from "vega-embed";
+  import type { EmbedOptions, Result } from "vega-embed";
   import vegaEmbed from "vega-embed";
   import { WIDTH_HEIGHT } from "./constants";
-  import type { SignalListeners, View } from "./types";
+  import type { SignalListeners, View, VisualizationSpec } from "./types";
   import {
     addSignalListenersToView,
     updateMultipleDatasetsInView,

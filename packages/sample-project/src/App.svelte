@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { VisualizationSpec } from "vega-embed";
   import { Vega, VegaLite } from "svelte-vega";
+  import type { VisualizationSpec } from "svelte-vega";
 
   let dataVL = {
     table: [

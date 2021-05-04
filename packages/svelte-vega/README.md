@@ -49,8 +49,7 @@ For an example Svelte project using `svelte-vega`, see the [example application]
 
 ```typescript
 <script lang="ts">
-  import type { VisualizationSpec } from "vega-embed";
-
+  import type { VisualizationSpec } from "svelte-vega";
   import { Vega } from "svelte-vega";
 
   const data = {
@@ -77,8 +76,7 @@ For an example Svelte project using `svelte-vega`, see the [example application]
 
 ```typescript
 <script lang="ts">
-  import type { VisualizationSpec } from "vega-embed";
-
+  import type { VisualizationSpec } from "svelte-vega";
   import { VegaLite } from "svelte-vega";
 
   const data = {
