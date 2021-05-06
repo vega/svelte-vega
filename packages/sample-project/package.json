@@ -16,7 +16,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.0.0",
     "@tsconfig/svelte": "^1.0.0",
     "rollup": "^2.3.4",
@@ -30,10 +30,10 @@
   },
   "dependencies": {
     "sirv-cli": "^1.0.0",
-    "svelte-vega": "1.0.0",
     "svelte": "^3.0.0",
+    "svelte-vega": "1.0.0",
     "tslib": "^2.0.0",
-    "vega-lite": "^5.1.0",
-    "vega": "^5.20.2"
+    "vega": "^5.20.2",
+    "vega-lite": "^5.1.0"
   }
 }
