@@ -19,7 +19,7 @@
   "sideEffects": false,
   "dependencies": {
     "@storybook/source-loader": "6.3.0-alpha.28",
-    "@storybook/svelte": "6.3.0-alpha.21",
+    "@storybook/svelte": "6.3.0-alpha.28",
     "svelte-vega": "1.0.0",
     "svelte": "^3.31.2",
     "vega-lite": "^5.1.0",
