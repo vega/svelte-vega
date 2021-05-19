@@ -3,8 +3,7 @@
   "compilerOptions": {
     "strict": true,
     "types": ["svelte"],
-    "noImplicitAny": true,
-    "outDir": "dist"
+    "noImplicitAny": true
   },
   "files": ["./src/index.ts"],
   "include": ["src/**/*"]
