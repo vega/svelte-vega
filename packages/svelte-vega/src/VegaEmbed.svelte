@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { createEventDispatcher, onDestroy } from "svelte";
   import type { EmbedOptions, Result } from "vega-embed";
-  import vegaEmbed from "vega-embed";
-  import { WIDTH_HEIGHT } from "./constants";
   import type { SignalListeners, View, VisualizationSpec } from "./types";
+
+  import { createEventDispatcher, onDestroy } from "svelte";
+  import vegaEmbed from "vega-embed";
+
+  import { WIDTH_HEIGHT } from "./constants";
   import {
     addSignalListenersToView,
     updateMultipleDatasetsInView,
@@ -15,6 +17,7 @@
 
   export let options: EmbedOptions;
   export let spec: VisualizationSpec;
+  export let view: View | undefined;
   export let signalListeners: SignalListeners = {};
   export let data: Record<string, unknown> = {};
 
@@ -55,7 +58,7 @@
               newSignalListeners,
               oldSignalListeners
             );
-            const { view } = result;
+            view = result.view;
             if (specChanges.width !== false) {
               view.width(specChanges.width);
             }
@@ -76,7 +79,7 @@
           !shallowEqual(newSignalListeners, oldSignalListeners) &&
           result !== undefined
         ) {
-          const { view } = result;
+          view = result.view;
           if (oldSignalListeners) {
             removeSignalListenersFromView(view, oldSignalListeners);
           }
@@ -99,9 +102,8 @@
   async function createView() {
     clearView();
     try {
-      console.info("Creating new view");
       result = await vegaEmbed(chartContainer, spec, options);
-      const { view } = result;
+      view = result.view;
       if (addSignalListenersToView(view, signalListeners)) {
         view.runAsync();
       }
@@ -115,6 +117,7 @@
     if (result) {
       result.finalize();
       result = undefined;
+      view = undefined;
     }
   }
 
@@ -135,11 +138,12 @@
 
   async function update() {
     if (data && Object.keys(data).length > 0 && result !== undefined) {
-      const { view } = result;
+      view = result.view;
       updateMultipleDatasetsInView(view, data);
       await view.resize().runAsync();
     }
   }
+
 </script>
 
 <div bind:this={chartContainer} />
