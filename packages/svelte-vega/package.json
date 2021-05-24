@@ -41,7 +41,7 @@
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
     "@tsconfig/svelte": "^1.0.10",
-    "rollup": "^2.48.0",
+    "rollup": "^2.49.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-execute": "^1.1.1",
     "rollup-plugin-svelte": "^7.1.0",

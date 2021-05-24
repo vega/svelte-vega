@@ -10708,10 +10708,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.46.0, rollup@^2.48.0:
-  version "2.48.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.48.0.tgz#fceb01ed771f991f29f7bd2ff7838146e55acb74"
-  integrity sha512-wl9ZSSSsi5579oscSDYSzGn092tCS076YB+TQrzsGuSfYyJeep8eEWj0eaRjuC5McuMNmcnR8icBqiE/FWNB1A==
+rollup@^2.49.0:
+  version "2.49.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.49.0.tgz#f0e5bb2b770ddf1be8cc30d4cce3457574c8c871"
+  integrity sha512-UnrCjMXICx9q0jF8L7OYs7LPk95dW0U5UYp/VANnWqfuhyr66FWi/YVlI34Oy8Tp4ZGLcaUDt4APJm80b9oPWQ==
   optionalDependencies:
     fsevents "~2.3.1"
 
@@ -11637,6 +11637,14 @@ svelte-preprocess@^4.0.0, svelte-preprocess@^4.3.0, svelte-preprocess@^4.7.3:
     detect-indent "^6.0.0"
     strip-indent "^3.0.0"
 
+svelte-vega@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/svelte-vega/-/svelte-vega-1.0.0.tgz#be972528fbab535f3ba2771483075e79127def56"
+  integrity sha512-9i6jZcyBKa9MrWrNk6Qql6hpogJAo6bLdollXm76Hw+Zw+yFTIZgdImh9mvO2kpU0LWlCD5QFL8NBBrbU/pNGA==
+  dependencies:
+    fast-deep-equal "^3.1.1"
+    vega-embed "^6.17.0"
+
 svelte@^3.0.0, svelte@^3.31.2, svelte@^3.38.2:
   version "3.38.2"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.38.2.tgz#55e5c681f793ae349b5cc2fe58e5782af4275ef5"
@@ -12344,7 +12352,7 @@ vega-dataflow@^5.7.3, vega-dataflow@^5.7.4, vega-dataflow@~5.7.4:
     vega-loader "^4.3.2"
     vega-util "^1.16.1"
 
-vega-embed@^6.18.2:
+vega-embed@^6.17.0, vega-embed@^6.18.2:
   version "6.18.2"
   resolved "https://registry.yarnpkg.com/vega-embed/-/vega-embed-6.18.2.tgz#1fcbf9c1eca1fc58db337efacbca7b9c74db43ca"
   integrity sha512-wcDyQPE4J5aiCDc3/suH5RQDvrKkjuLkhzUcbOLwEkNF8/+pp17tS0JghzEvAPNRg+5aG1/N2ydixq8Lk3dOlg==
