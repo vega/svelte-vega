@@ -121,7 +121,7 @@
     }
   }
 
-  function handleError(error: Error) {
+  function handleError(error: Error): undefined {
     dispatch("onError", {
       error: error,
     });
