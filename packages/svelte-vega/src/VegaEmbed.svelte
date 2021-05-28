@@ -121,12 +121,11 @@
     }
   }
 
-  function handleError(error: Error): undefined {
+  function handleError(error: Error) {
     dispatch("onError", {
       error: error,
     });
     console.warn(error);
-    return undefined;
   }
 
   function onNewView(view: View) {
