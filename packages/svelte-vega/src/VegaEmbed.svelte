@@ -126,7 +126,6 @@
       error: error,
     });
     console.warn(error);
-    return undefined;
   }
 
   function onNewView(view: View) {
