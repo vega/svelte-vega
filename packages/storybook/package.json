@@ -21,7 +21,7 @@
     "@storybook/source-loader": "6.3.0-rc.11",
     "@storybook/svelte": "6.3.0-alpha.28",
     "svelte-vega": "^1.0.0",
-    "svelte": "^3.31.2",
+    "svelte": "^3.38.3",
     "vega-lite": "^5.1.0",
     "vega": "^5.20.2"
   },
