@@ -6,6 +6,7 @@
 
   export let options: EmbedOptions = {};
 
+  let selected = "";
   let data = data1;
   let spec: VisualizationSpec = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
@@ -13,10 +14,15 @@
     data: {
       name: "table",
     },
-    mark: "bar",
+    params: [{ name: "select", select: { type: "point", encodings: ["x"] } }],
+    mark: { type: "bar", cursor: "pointer" },
     encoding: {
       x: { field: "category", type: "nominal" },
       y: { field: "amount", type: "quantitative" },
+      fillOpacity: {
+        condition: { param: "select", value: 1 },
+        value: 0.3,
+      },
     },
   };
 
@@ -29,6 +35,14 @@
       });
     }
     data = { table };
+  }
+
+  function handleSelection(...args: any) {
+    if (args[1].category !== undefined) {
+      selected = `selected column(s): ${args[1].category}`;
+    } else {
+      selected = "";
+    }
   }
 </script>
 
@@ -51,7 +65,15 @@
     </button>
   </div>
   Will recompile when spec changes and update when data changes.
-  <VegaLite {data} {spec} {options} />
+  <VegaLite
+    {data}
+    {spec}
+    {options}
+    signalListeners={{ select: handleSelection }}
+  />
+  {#if selected !== ""}
+    <p>{selected}</p>
+  {/if}
 </main>
 
 <style>
