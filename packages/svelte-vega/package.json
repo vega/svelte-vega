@@ -46,7 +46,7 @@
     "rollup-plugin-execute": "^1.1.1",
     "rollup-plugin-svelte": "^7.1.0",
     "svelte": "^3.42.1",
-    "svelte-check": "^2.2.3",
+    "svelte-check": "^2.2.4",
     "svelte-preprocess": "^4.7.4"
   },
   "peerDependencies": {
