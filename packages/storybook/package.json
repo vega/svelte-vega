@@ -26,7 +26,7 @@
     "vega-lite": "^5.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
+    "@babel/core": "^7.15.5",
     "@storybook/builder-webpack5": "^6.3.7",
     "@storybook/manager-webpack5": "^6.3.8",
     "gh-pages": "^3.2.3",
