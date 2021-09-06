@@ -2498,13 +2498,13 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.3.7":
-  version "6.3.7"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.3.7.tgz#cc348305df3c2d8d716c0bab7830c9f537b859ff"
-  integrity sha512-0xQTq90jwx7W7MJn/idEBCGPOyxi/3No5j+5YdfJsSGJRuMFH3jt6pGgdeZ4XA01cmmIX6bZ+fB9al6yAzs91w==
+"@storybook/source-loader@6.3.8":
+  version "6.3.8"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.3.8.tgz#b11aaa08b3356d0a1749bcac3b5aab52f426dec1"
+  integrity sha512-aQ3mrpxpVB2w7sST4jbQUBgHLQZTLD0H1SgohHSuNPz2nrYieuxmOfwjbJr1ZCtuZDCi5xyLjDgUJ3wZ1hPsfQ==
   dependencies:
-    "@storybook/addons" "6.3.7"
-    "@storybook/client-logger" "6.3.7"
+    "@storybook/addons" "6.3.8"
+    "@storybook/client-logger" "6.3.8"
     "@storybook/csf" "0.0.1"
     core-js "^3.8.2"
     estraverse "^5.2.0"
