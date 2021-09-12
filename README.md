@@ -24,7 +24,7 @@ If you are not sure how to integrate `svelte-vega` into your code, take a look a
 
 ### SvelteKit (Vite) Usage
 
-SvelteKit uses Vite under the hood which performs an optimization process called dependency pre-building, which causes some [problems](https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/faq.md#what-is-going-on-with-vite-and-pre-bundling-dependencies) during development. To get Vite to work with svelte-vega update the SvelteKit's config as follows:
+SvelteKit uses Vite which performs an optimization process called dependency pre-building, which causes some [problems](https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/faq.md#what-is-going-on-with-vite-and-pre-bundling-dependencies) during development. To get Vite to work with svelte-vega update the SvelteKit's config as follows:
 
 ```js
 const config = {
