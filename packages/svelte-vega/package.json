@@ -23,7 +23,7 @@
     "prebuild": "rm -rf ./dist",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "validate": "svelte-check",
+    "validate": "svelte-check --ignore dist",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release"
   },

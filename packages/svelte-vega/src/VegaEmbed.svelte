@@ -109,7 +109,7 @@
       }
       onNewView(view);
     } catch (e) {
-      handleError(e);
+      handleError(e as Error);
     }
   }
 
