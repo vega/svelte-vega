@@ -12654,15 +12654,16 @@ vega-dataflow@^5.7.3, vega-dataflow@^5.7.4, vega-dataflow@~5.7.4:
     vega-loader "^4.3.2"
     vega-util "^1.16.1"
 
-vega-embed@^6.19.0:
-  version "6.19.0"
-  resolved "https://registry.yarnpkg.com/vega-embed/-/vega-embed-6.19.0.tgz#b84775c614d3719d27e8234765a9418553bcb170"
-  integrity sha512-bOyMoS9qEy1CFgFk+Jtacu/TJT5ehi4Bb43ZRPc+g25dJMW468HMEi5P+jRM1RwfBAoHEQdKknFEzS0/PVpJ4g==
+vega-embed@^6.19.1:
+  version "6.19.1"
+  resolved "https://registry.yarnpkg.com/vega-embed/-/vega-embed-6.19.1.tgz#05e2f5aa9d013344e8ed77245b3009a52e309e63"
+  integrity sha512-ILhenUl+sJtSeJtr0FhJ1zeaGOPGxST5AiAtKWmGBq9nFPf1T90TZ1duKcIhTgXI5ql/Q0UwgYpvQQT2qYK+EQ==
   dependencies:
     fast-json-patch "^3.1.0"
     json-stringify-pretty-compact "^3.0.0"
     semver "^7.3.5"
     tslib "^2.3.1"
+    vega-interpreter "^1.0.4"
     vega-schema-url-parser "^2.2.0"
     vega-themes "^2.10.0"
     vega-tooltip "^0.27.0"
@@ -12762,6 +12763,11 @@ vega-hierarchy@~4.0.9:
     d3-hierarchy "^2.0.0"
     vega-dataflow "^5.7.3"
     vega-util "^1.15.2"
+
+vega-interpreter@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/vega-interpreter/-/vega-interpreter-1.0.4.tgz#291ebf85bc2d1c3550a3da22ff75b3ba0d326a39"
+  integrity sha512-6tpYIa/pJz0cZo5fSxDSkZkAA51pID2LjOtQkOQvbzn+sJiCaWKPFhur8MBqbcmYZ9bnap1OYNwlrvpd2qBLvg==
 
 vega-label@~1.1.0:
   version "1.1.0"
