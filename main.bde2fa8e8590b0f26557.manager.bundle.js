@@ -1,0 +1,1 @@
+(globalThis.webpackChunksvelte_vega_demo=globalThis.webpackChunksvelte_vega_demo||[]).push([[179],{53260:()=>{}},__webpack_require__=>{var __webpack_exec__=moduleId=>__webpack_require__(__webpack_require__.s=moduleId);__webpack_require__.O(0,[183],(()=>(__webpack_exec__(1695),__webpack_exec__(44925))));__webpack_require__.O()}]);
