@@ -1,8 +1,6 @@
 # svelte-vega [![NPM version][npm-image]][npm-url]
 
-> Easy usage of `vega` or `vega-lite` in `svelte` applications!
-
-> See our [Storybook Demo](http://vega.github.io/svelte-vega/).
+> Easily use `vega` or `vega-lite` in `svelte` Svelte applications!
 
 ## Install
 
@@ -20,6 +18,32 @@ npm install svelte-vega
 
 [npm-image]: https://img.shields.io/npm/v/svelte-vega.svg
 [npm-url]: https://npmjs.org/package/svelte-vega
+
+### Svelte
+
+If using SvelteKit, `svelte-vega` will work without additional setup.
+For a regular Svelte project, add the JSON plugin:
+
+```bash
+npm i @rollup/plugin-json
+```
+
+Then, you must add the JSON plugin `@rollup/plugin-json` to your `rollup.config.js` file.
+
+```javascript
+import json from "@rollup/plugin-json"
+
+...
+
+export default {
+
+ ...
+
+  plugins: [
+    json(),
+  ]
+}
+```
 
 ## Example Code
 
@@ -93,8 +117,11 @@ The following contains code samples for Svelte Vega and Vega-Lite components usi
 
 ## Development
 
-The library code lives in `src/lib/`, with the example site in `src/routes/`.
+The core code lives in `src/lib/`, with the example site in `src/routes/`.
 
 To package a new version use `npx svelte-kit package`.
 
 The package to be published will live in `package/`.
+
+[npm-image]: https://img.shields.io/npm/v/svelte-vega.svg
+[npm-url]: https://npmjs.org/package/svelte-vega

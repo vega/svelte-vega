@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
 	import { VegaLite, Vega } from '$lib/index';
+
+	import Update from './update.svelte';
 </script>
 
 <h1>Example Vega and Vega-Lite Charts with svelte-vega</h1>
@@ -130,3 +132,5 @@
 		]
 	}}
 />
+
+<Update />

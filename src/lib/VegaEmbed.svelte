@@ -1,148 +1,143 @@
 <script lang="ts">
-  import type { EmbedOptions, Result } from "vega-embed";
-  import type { SignalListeners, View, VisualizationSpec } from "./types";
+	import type { EmbedOptions, Result } from 'vega-embed';
 
-  import { createEventDispatcher, onDestroy } from "svelte";
-  import vegaEmbed from "vega-embed";
+	import type { SignalListeners, View, VisualizationSpec } from './types';
 
-  import { WIDTH_HEIGHT } from "./constants";
-  import {
-    addSignalListenersToView,
-    updateMultipleDatasetsInView,
-    combineSpecWithDimension,
-    computeSpecChanges,
-    removeSignalListenersFromView,
-    shallowEqual,
-  } from "./utils";
+	import { createEventDispatcher, onDestroy } from 'svelte';
+	import vegaEmbed from 'vega-embed';
 
-  export let options: EmbedOptions;
-  export let spec: VisualizationSpec;
-  export let view: View | undefined;
-  export let signalListeners: SignalListeners = {};
-  export let data: Record<string, unknown> = {};
+	import {
+		addSignalListenersToView,
+		updateMultipleDatasetsInView,
+		combineSpecWithDimension,
+		computeSpecChanges,
+		removeSignalListenersFromView,
+		shallowEqual
+	} from './utils';
 
-  const dispatch = createEventDispatcher();
+	export let options: EmbedOptions;
+	export let spec: VisualizationSpec;
+	export let view: View | undefined;
+	export let signalListeners: SignalListeners = {};
+	export let data: Record<string, unknown> = {};
 
-  let result: Result | undefined = undefined;
-  let prevOptions: EmbedOptions = {};
-  let prevSignalListeners: SignalListeners = {};
-  let prevSpec: VisualizationSpec = {};
-  let prevData: Record<string, unknown> = {};
-  let chartContainer: HTMLElement;
+	const dispatch = createEventDispatcher();
 
-  $: {
-    if (!shallowEqual(data, prevData)) {
-      update();
-    }
-    prevData = data;
-  }
+	let result: Result | undefined = undefined;
+	let prevOptions: EmbedOptions = {};
+	let prevSignalListeners: SignalListeners = {};
+	let prevSpec: VisualizationSpec = {};
+	let prevData: Record<string, unknown> = {};
+	let chartContainer: HTMLElement;
 
-  $: {
-    if (chartContainer !== undefined) {
-      // only create a new view if neccessary
-      if (!shallowEqual(options, prevOptions, WIDTH_HEIGHT)) {
-        createView();
-      } else {
-        const specChanges = computeSpecChanges(
-          combineSpecWithDimension(spec, options),
-          combineSpecWithDimension(prevSpec, prevOptions)
-        );
-        const newSignalListeners = signalListeners;
-        const oldSignalListeners = prevSignalListeners;
+	const WIDTH_HEIGHT = new Set(['width', 'height']);
 
-        if (specChanges) {
-          if (specChanges.isExpensive) {
-            createView();
-          } else if (result !== undefined) {
-            const areSignalListenersChanged = !shallowEqual(
-              newSignalListeners,
-              oldSignalListeners
-            );
-            view = result.view;
-            if (specChanges.width !== false) {
-              view.width(specChanges.width);
-            }
-            if (specChanges.height !== false) {
-              view.height(specChanges.height);
-            }
-            if (areSignalListenersChanged) {
-              if (oldSignalListeners) {
-                removeSignalListenersFromView(view, oldSignalListeners);
-              }
-              if (newSignalListeners) {
-                addSignalListenersToView(view, newSignalListeners);
-              }
-            }
-            view.runAsync();
-          }
-        } else if (
-          !shallowEqual(newSignalListeners, oldSignalListeners) &&
-          result !== undefined
-        ) {
-          view = result.view;
-          if (oldSignalListeners) {
-            removeSignalListenersFromView(view, oldSignalListeners);
-          }
-          if (newSignalListeners) {
-            addSignalListenersToView(view, newSignalListeners);
-          }
-          view.runAsync();
-        }
-      }
-      prevOptions = options;
-      prevSignalListeners = signalListeners;
-      prevSpec = spec;
-    }
-  }
+	$: {
+		if (!shallowEqual(data, prevData)) {
+			update();
+		}
+		prevData = data;
+	}
 
-  onDestroy(() => {
-    clearView();
-  });
+	$: {
+		if (chartContainer !== undefined) {
+			// only create a new view if neccessary
+			if (!shallowEqual(options, prevOptions, WIDTH_HEIGHT)) {
+				createView();
+			} else {
+				const specChanges = computeSpecChanges(
+					combineSpecWithDimension(spec, options),
+					combineSpecWithDimension(prevSpec, prevOptions)
+				);
+				const newSignalListeners = signalListeners;
+				const oldSignalListeners = prevSignalListeners;
 
-  async function createView() {
-    clearView();
-    try {
-      result = await vegaEmbed(chartContainer, spec, options);
-      view = result.view;
-      if (addSignalListenersToView(view, signalListeners)) {
-        view.runAsync();
-      }
-      onNewView(view);
-    } catch (e) {
-      handleError(e as Error);
-    }
-  }
+				if (specChanges) {
+					if (specChanges.isExpensive) {
+						createView();
+					} else if (result !== undefined) {
+						const areSignalListenersChanged = !shallowEqual(newSignalListeners, oldSignalListeners);
+						view = result.view;
+						if (specChanges.width !== false) {
+							view.width(specChanges.width);
+						}
+						if (specChanges.height !== false) {
+							view.height(specChanges.height);
+						}
+						if (areSignalListenersChanged) {
+							if (oldSignalListeners) {
+								removeSignalListenersFromView(view, oldSignalListeners);
+							}
+							if (newSignalListeners) {
+								addSignalListenersToView(view, newSignalListeners);
+							}
+						}
+						view.runAsync();
+					}
+				} else if (!shallowEqual(newSignalListeners, oldSignalListeners) && result !== undefined) {
+					view = result.view;
+					if (oldSignalListeners) {
+						removeSignalListenersFromView(view, oldSignalListeners);
+					}
+					if (newSignalListeners) {
+						addSignalListenersToView(view, newSignalListeners);
+					}
+					view.runAsync();
+				}
+			}
+			prevOptions = options;
+			prevSignalListeners = signalListeners;
+			prevSpec = spec;
+		}
+	}
 
-  function clearView() {
-    if (result) {
-      result.finalize();
-      result = undefined;
-      view = undefined;
-    }
-  }
+	onDestroy(() => {
+		clearView();
+	});
 
-  function handleError(error: Error) {
-    dispatch("onError", {
-      error: error,
-    });
-    console.warn(error);
-  }
+	async function createView() {
+		clearView();
+		try {
+			result = await vegaEmbed(chartContainer, spec, options);
+			view = result.view;
+			if (addSignalListenersToView(view, signalListeners)) {
+				view.runAsync();
+			}
+			onNewView(view);
+		} catch (e) {
+			handleError(e as Error);
+		}
+	}
 
-  function onNewView(view: View) {
-    update();
-    dispatch("onNewView", {
-      view: view,
-    });
-  }
+	function clearView() {
+		if (result) {
+			result.finalize();
+			result = undefined;
+			view = undefined;
+		}
+	}
 
-  async function update() {
-    if (data && Object.keys(data).length > 0 && result !== undefined) {
-      view = result.view;
-      updateMultipleDatasetsInView(view, data);
-      await view.resize().runAsync();
-    }
-  }
+	function handleError(error: Error) {
+		dispatch('onError', {
+			error: error
+		});
+		console.warn(error);
+	}
 
+	function onNewView(view: View) {
+		update();
+		dispatch('onNewView', {
+			view: view
+		});
+	}
+
+	async function update() {
+		if (data && Object.keys(data).length > 0 && result !== undefined) {
+			view = result.view;
+			updateMultipleDatasetsInView(view, data);
+			await view.resize().runAsync();
+		}
+	}
 </script>
 
 <div bind:this={chartContainer} />
