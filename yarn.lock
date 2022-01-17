@@ -12029,16 +12029,16 @@ supports-hyperlinks@^2.1.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-check@^2.2.11:
-  version "2.2.11"
-  resolved "https://registry.yarnpkg.com/svelte-check/-/svelte-check-2.2.11.tgz#d436fd71dbc15876a1a5575a4924133620ac3f37"
-  integrity sha512-clotPGGZPj3LuS9qP1lk+Wwnsj+js42ehCPmHk+qtyaQh/dU95e0qkpPmtmOMYHN6My5Y75XqeN1QNLj5V5gwA==
+svelte-check@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/svelte-check/-/svelte-check-2.3.0.tgz#3969e3c0655427d79f6251c1f9c05896eb07cf59"
+  integrity sha512-SBKdJyUmxzPmJf/ZPqDSQOoa9JzOcgEpV7u3UaYcgVn7fA0veZ3FA5JgLU8KYtf84Gp6guBVcrC7XKLjJa5SXQ==
   dependencies:
-    chalk "^4.0.0"
     chokidar "^3.4.1"
     fast-glob "^3.2.7"
     import-fresh "^3.2.1"
     minimist "^1.2.5"
+    picocolors "^1.0.0"
     sade "^1.7.4"
     source-map "^0.7.3"
     svelte-preprocess "^4.0.0"
