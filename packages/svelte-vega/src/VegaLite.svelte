@@ -3,11 +3,11 @@
   import type { SignalListeners, VisualizationSpec, View } from "./types";
   import VegaEmbed from "./VegaEmbed.svelte";
 
-  export let view: View | undefined;
   export let spec: VisualizationSpec;
   export let options: EmbedOptions = {};
   export let data: Record<string, unknown> = {};
   export let signalListeners: SignalListeners = {};
+  export let view: View | undefined = undefined;
 
   const mode = "vega-lite" as Mode;
   $: vegaLiteOptions = { ...options, mode: mode };
