@@ -47,7 +47,7 @@
     "rollup-plugin-svelte": "^7.1.0",
     "svelte": "^3.47.0",
     "svelte-check": "^2.6.0",
-    "svelte-preprocess": "^4.10.5"
+    "svelte-preprocess": "^4.10.6"
   },
   "peerDependencies": {
     "vega": "*",
