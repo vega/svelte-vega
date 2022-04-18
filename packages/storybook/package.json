@@ -18,7 +18,7 @@
   "private": true,
   "sideEffects": false,
   "dependencies": {
-    "@storybook/source-loader": "6.4.21",
+    "@storybook/source-loader": "6.4.22",
     "@storybook/svelte": "6.4.21",
     "svelte": "^3.47.0",
     "svelte-vega": "^1.1.0",
@@ -29,12 +29,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
-    "@storybook/builder-webpack5": "^6.4.21",
+    "@storybook/builder-webpack5": "^6.4.22",
     "@storybook/manager-webpack5": "^6.4.21",
     "gh-pages": "^3.2.3",
     "svelte-check": "^2.6.0",
     "svelte-loader": "^3.1.2",
-    "svelte-preprocess": "^4.10.5"
+    "svelte-preprocess": "^4.10.6"
   },
   "license": "BSD-3-Clause",
   "publishConfig": {
