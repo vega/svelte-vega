@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
-    "@storybook/builder-webpack5": "^6.5.7",
+    "@storybook/builder-webpack5": "^6.5.8",
     "@storybook/manager-webpack5": "^6.5.7",
     "gh-pages": "^4.0.0",
     "svelte-check": "^2.7.2",
