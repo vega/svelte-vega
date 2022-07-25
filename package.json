@@ -22,7 +22,7 @@
     "release": "yarn workspace svelte-vega semantic-release --branches main"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.18.2",
+    "@babel/eslint-parser": "^7.18.9",
     "@storybook/builder-webpack5": "^6.5.9",
     "@storybook/manager-webpack5": "^6.5.9",
     "@tsconfig/svelte": "^3.0.0",
