@@ -2430,13 +2430,13 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.5.9":
-  version "6.5.9"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.5.9.tgz#7b6f065c6a6108c4b4ca7e45bfd78707373d84ac"
-  integrity sha512-H03nFKaP6borfWMTTa9igBA+Jm2ph+FoVJImWC/X+LAmLSJYYSXuqSgmiZ/DZvbjxS4k8vccE2HXogne1IvaRA==
+"@storybook/source-loader@6.5.10":
+  version "6.5.10"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-6.5.10.tgz#f62b4c7b1933976a20913ddc149d55026ef4c872"
+  integrity sha512-1RxxRumpjs8VUUwES9LId+cuNQnixhZAcwCxd6jaKkTZbjiQCtAhXX6DBTjJGV1u/JnCsqEp5b1wB8j/EioNHw==
   dependencies:
-    "@storybook/addons" "6.5.9"
-    "@storybook/client-logger" "6.5.9"
+    "@storybook/addons" "6.5.10"
+    "@storybook/client-logger" "6.5.10"
     "@storybook/csf" "0.0.2--canary.4566f4d.1"
     core-js "^3.8.2"
     estraverse "^5.2.0"
