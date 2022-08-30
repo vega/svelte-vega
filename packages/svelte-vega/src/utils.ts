@@ -76,8 +76,8 @@ export function addSignalListenersToView(
   return signalNames.length > 0;
 }
 
-export function getUniqueFieldNames(objects: VisualizationSpec[]): Set<string> {
-  return new Set(objects.flatMap((o) => Object.keys(o)));
+export function getUniqueFieldNames(specs: VisualizationSpec[]): Set<string> {
+  return new Set(specs.flatMap((o) => Object.keys(o)));
 }
 
 interface SpecChanges {
