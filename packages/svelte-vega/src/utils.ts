@@ -76,10 +76,10 @@ export function addSignalListenersToView(
   return signalNames.length > 0;
 }
 
-export function getUniqueFieldNames<T>(objects: T[]): Set<string> {
+export function getUniqueFieldNames(objects: VisualizationSpec[]): Set<string> {
   const fields = new Set<string>();
-  objects.forEach((o) => {
-    Object.keys(o).forEach((field) => {
+  objects.forEach((o: VisualizationSpec) => {
+    Object.keys(o).forEach((field: string) => {
       fields.add(field);
     });
   });
