@@ -7,8 +7,7 @@ export function updateMultipleDatasetsInView(
   view: View,
   data: Record<string, unknown>
 ): void {
-  Object.keys(data).forEach((name) => {
-    const value = data[name];
+  for (const [name, value] of Object.entries(data)) {
     const getType = {};
     if (value) {
       if (!!value && getType.toString.call(value) === "[object Function]") {
@@ -24,7 +23,7 @@ export function updateMultipleDatasetsInView(
         );
       }
     }
-  });
+  }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -48,14 +47,14 @@ export function removeSignalListenersFromView(
   signalListeners: SignalListeners
 ): boolean {
   const signalNames = Object.keys(signalListeners);
-  signalNames.forEach((signalName) => {
+  for (const signalName of signalNames) {
     try {
       view.removeSignalListener(signalName, signalListeners[signalName]);
     } catch (error) {
       // eslint-disable-next-line no-console
       console.warn("Cannot remove invalid signal listener.", error);
     }
-  });
+  }
 
   return signalNames.length > 0;
 }
@@ -65,26 +64,20 @@ export function addSignalListenersToView(
   signalListeners: SignalListeners
 ): boolean {
   const signalNames = Object.keys(signalListeners);
-  signalNames.forEach((signalName) => {
+
+  for (const signalName of signalNames) {
     try {
       view.addSignalListener(signalName, signalListeners[signalName]);
     } catch (error) {
       console.warn("Cannot add invalid signal listener.", error);
     }
-  });
+  }
 
   return signalNames.length > 0;
 }
 
-export function getUniqueFieldNames(objects: VisualizationSpec[]): Set<string> {
-  const fields = new Set<string>();
-  objects.forEach((o: VisualizationSpec) => {
-    Object.keys(o).forEach((field: string) => {
-      fields.add(field);
-    });
-  });
-
-  return fields;
+export function getUniqueFieldNames(specs: VisualizationSpec[]): Set<string> {
+  return new Set(specs.flatMap((o) => Object.keys(o)));
 }
 
 interface SpecChanges {
