@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "sirv-cli": "^2.0.2",
-    "svelte": "^3.49.0",
+    "svelte": "^3.50.0",
     "svelte-vega": "^1.1.0",
     "tslib": "^2.4.0",
     "vega": "^5.22.1",
