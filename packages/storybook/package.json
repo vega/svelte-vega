@@ -28,7 +28,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.0",
+    "@babel/core": "^7.19.1",
     "@storybook/builder-webpack5": "^6.5.10",
     "@storybook/manager-webpack5": "^6.5.10",
     "gh-pages": "^4.0.0",
