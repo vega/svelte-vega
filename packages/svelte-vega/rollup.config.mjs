@@ -5,7 +5,7 @@ import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import execute from "rollup-plugin-execute";
-import pkg from "./package.json";
+import pkg from "./package.json" assert { type: 'json' };
 
 const name = pkg.name
   .replace(/^(@\S+\/)?(svelte-)?(\S+)/, "$3")
