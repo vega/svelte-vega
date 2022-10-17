@@ -40,9 +40,11 @@ export default [
         preprocess: sveltePreprocess(),
       }),
       commonjs(),
-      resolve(),
+      resolve({
+        browser: true
+      }),
       typescript(),
       json(),
-    ],
+    ],  
   },
 ];
