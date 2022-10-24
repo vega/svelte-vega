@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",
-    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.13",
     "@storybook/manager-webpack5": "^6.5.12",
     "@tsconfig/svelte": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
