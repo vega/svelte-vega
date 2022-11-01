@@ -1,15 +1,9 @@
 {
   "name": "svelte-vega",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "BSD-3-Clause",
   "description": "Render Vega or Vega-Lite charts using a Svelte component.",
-  "author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io)",
-  "contributors": [
-    {
-      "name": "Ángel Alexander Cabrera",
-      "url": "https://cabreraalex.com"
-    }
-  ],
+  "author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io), Ángel Alexander Cabrera <alex.cabrera@gmail.com> (https://cabreraalex.com)",
   "keywords": [
     "Vega-Lite",
     "Vega",
