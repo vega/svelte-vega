@@ -7,8 +7,8 @@
   },
   "include": [
     "packages/svelte-vega/src/**/*",
-    "packages/sample-project/src/**/*",
-	"packages/storybook/stories/**/*"
+    "packages/svelte-vega-sample/**/*",
+	  "packages/storybook/stories/**/*"
   ],
   "exclude": ["node_modules/*"]
 }
