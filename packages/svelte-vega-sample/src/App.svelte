@@ -116,7 +116,6 @@
 
   $: viewVL ? console.log("Vega-Lite view: ", viewVL.data("table")) : "";
   $: viewV ? console.log("Vega view: ", viewV.data("table")) : "";
-
 </script>
 
 <main>
@@ -137,5 +136,4 @@
       max-width: none;
     }
   }
-
 </style>

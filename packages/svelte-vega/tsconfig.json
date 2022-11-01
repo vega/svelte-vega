@@ -3,9 +3,10 @@
   "compilerOptions": {
     "target": "es2019",
     "strict": true,
-    "types": ["svelte"],
-    "noImplicitAny": true
+    "declaration": true,
+    "noImplicitAny": true,
+    "types": ["svelte"]
   },
-  "files": ["./src/index.ts"],
-  "include": ["src/**/*"]
+  "include": ["src/**/*.ts", "src/**/*.svelte"],
+  "exclude": ["node_modules/*"]
 }

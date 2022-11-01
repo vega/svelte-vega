@@ -2,8 +2,14 @@
   "name": "svelte-vega",
   "version": "1.1.0",
   "license": "BSD-3-Clause",
-  "description": "Convert Vega spec into Svelte component.",
+  "description": "Render Vega or Vega-Lite charts using a Svelte component.",
   "author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io)",
+  "contributors": [
+    {
+      "name": "Ángel Alexander Cabrera",
+      "url": "https://cabreraalex.com"
+    }
+  ],
   "keywords": [
     "Vega-Lite",
     "Vega",
@@ -14,15 +20,16 @@
   "bugs": {
     "url": "https://github.com/vega/svelte-vega/issues"
   },
-  "sideEffects": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "svelte": "dist/index.js",
-  "module": "dist/index.mjs",
-  "main": "dist/index.umd.js",
-  "types": "dist/ts/index.d.ts",
+  "types": "src/index.ts",
   "scripts": {
     "prebuild": "rm -rf ./dist",
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "build": "npm run build:js && npm run build:svelte",
+    "build:js": "tsc -p . --outDir dist/ --rootDir src/",
+    "build:svelte": "svelte-strip strip src/ dist",
     "validate": "svelte-check --ignore dist",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release"
@@ -41,13 +48,16 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-typescript": "^9.0.2",
     "@tsconfig/svelte": "^3.0.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4",
     "rollup": "^3.2.2",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-execute": "^1.1.1",
     "rollup-plugin-svelte": "^7.1.0",
     "svelte": "^3.52.0",
     "svelte-check": "^2.9.2",
-    "svelte-preprocess": "^4.10.7"
+    "svelte-preprocess": "^4.10.7",
+    "svelte-strip": "^1.0.1"
   },
   "peerDependencies": {
     "vega": "*",
