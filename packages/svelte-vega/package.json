@@ -50,7 +50,7 @@
     "rollup-plugin-svelte": "^7.1.0",
     "svelte": "^3.54.0",
     "svelte-check": "^2.10.2",
-    "svelte-preprocess": "^4.10.7",
+    "svelte-preprocess": "^5.0.0",
     "svelte-strip": "^1.0.3"
   },
   "peerDependencies": {
