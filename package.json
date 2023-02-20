@@ -14,7 +14,7 @@
     "build": "yarn workspace svelte-vega build",
     "build:sample": "yarn build && yarn workspace svelte-vega-sample build",
     "build:storybook": "yarn build && yarn workspace svelte-vega-demo demo:build",
-    "lint": "eslint . --ext .svelte,.ts && yarn workspace svelte-vega validate",
+    "lint": "eslint . --ext .svelte,.ts && yarn workspace svelte-vega validate && yarn workspace svelte-vega-sample validate",
     "lint:fix": "eslint . --ext .svelte,.ts --fix",
     "storybook": "yarn build && yarn workspace svelte-vega-demo storybook",
     "sample": "yarn build && yarn workspace svelte-vega-sample dev",
