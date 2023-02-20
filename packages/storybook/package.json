@@ -20,20 +20,20 @@
   "dependencies": {
     "@storybook/source-loader": "6.5.16",
     "@storybook/svelte": "6.5.16",
-    "svelte": "^3.55.0",
-    "svelte-vega": "^1.1.1",
+    "svelte": "^3.55.1",
+    "svelte-vega": "^1.2.0",
     "vega": "^5.22.1",
-    "vega-lite": "^5.6.0",
+    "vega-lite": "^5.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@storybook/builder-webpack5": "^6.5.16",
-    "@storybook/manager-webpack5": "^6.5.15",
+    "@storybook/manager-webpack5": "^6.5.16",
     "gh-pages": "^5.0.0",
     "svelte-check": "^3.0.3",
-    "svelte-loader": "^3.1.5",
+    "svelte-loader": "^3.1.6",
     "svelte-preprocess": "^5.0.1"
   },
   "license": "BSD-3-Clause",
