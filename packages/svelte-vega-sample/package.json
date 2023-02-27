@@ -16,7 +16,7 @@
     "vega": "^5.22.1"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "@tsconfig/svelte": "^3.0.0",
     "svelte-check": "^3.0.4",
     "svelte-preprocess": "^5.0.1",
