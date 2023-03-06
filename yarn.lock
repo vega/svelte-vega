@@ -13580,10 +13580,10 @@ svelte-hmr@^0.15.1:
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.15.1.tgz#d11d878a0bbb12ec1cba030f580cd2049f4ec86b"
   integrity sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==
 
-svelte-loader@^3.1.6:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-3.1.6.tgz#59797e54743b55ce8eba58453aa574aa0de2a825"
-  integrity sha512-Jgb51YGjOK3w20hbw8B7jXGX/JA2bJih5kQrvBgn8sNj3Dj0+5jBWsvfp7aUG3CXWSXCa8NejPP4bU6zB+dRNQ==
+svelte-loader@^3.1.7:
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/svelte-loader/-/svelte-loader-3.1.7.tgz#b6acc02380b3cfe08340a08fe6831474fe4d56cb"
+  integrity sha512-YVg5gQaUdV26uaA5SEGj1VOUX0YQicD9PezKvVlkQ2JI644silWtJZ3hkxHtXSfjnlFr0OTNoyOgeINIODdT+A==
   dependencies:
     loader-utils "^2.0.4"
     svelte-dev-helper "^1.1.9"
