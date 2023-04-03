@@ -16,7 +16,6 @@
     "types"
   ],
   "private": true,
-  "sideEffects": false,
   "dependencies": {
     "@storybook/source-loader": "6.5.16",
     "@storybook/svelte": "6.5.16",
