@@ -21,3 +21,10 @@ package-lock.json
 _gh-pages
 dist
 build
+.svelte-kit
+package
+.env
+.env.*
+!.env.example
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
