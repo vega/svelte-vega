@@ -3,7 +3,9 @@
   "compilerOptions": {
     "strict": true,
     "types": ["svelte", "node"],
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "include": [
     "packages/svelte-vega/src/**/*",

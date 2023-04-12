@@ -1,0 +1,85 @@
+Arguments: 
+  /opt/homebrew/Cellar/node/19.8.1/bin/node /opt/homebrew/bin/yarn
+
+PATH: 
+  /opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/opt/homebrew/Cellar/pyenv-virtualenv/1.2.1/shims:/Users/alex/.yarn/bin:/Users/alex/.config/yarn/global/node_modules/.bin:/usr/local/opt/node@14/bin:/Users/alex/.pyenv/shims:/usr/local/sbin:/Users/alex/.fastlane/bin:/Users/alex/.npm/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/Library/Apple/usr/bin:/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/opt/homebrew/Cellar/pyenv-virtualenv/1.2.1/shims:/Users/alex/.yarn/bin:/Users/alex/.config/yarn/global/node_modules/.bin:/usr/local/opt/node@14/bin:/usr/local/sbin:/Users/alex/.fastlane/bin:/Users/alex/.npm/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/alex/.gems/bin:/opt/homebrew/opt/fzf/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/alex/.gems/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  19.8.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: ENOENT: no such file or directory, scandir '/Users/alex/Documents/Work/Research/svelte-vega.nosync/packages/storybook/node_modules/@ampproject'
+
+npm manifest: 
+  {
+    "name": "svelte-vega-monorepo",
+    "version": "0.0.0",
+    "description": "Providing a Svelte Vega component and a demo for it.",
+    "author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io)",
+    "repository": "git@github.com:vega/svelte-vega.git",
+    "bugs": {
+      "url": "https://github.com/vega/svelte-vega/issues"
+    },
+    "private": true,
+    "license": "BSD-3-Clause",
+    "scripts": {
+      "postpublish": "git push; git push --tags",
+      "build": "yarn workspace svelte-vega build",
+      "build:sample": "yarn build && yarn workspace svelte-vega-sample build",
+      "build:storybook": "yarn build && yarn workspace svelte-vega-demo demo:build",
+      "lint": "eslint . --ext .svelte,.ts && yarn workspace svelte-vega validate && yarn workspace svelte-vega-sample validate",
+      "lint:fix": "eslint . --ext .svelte,.ts --fix",
+      "storybook": "yarn build && yarn workspace svelte-vega-demo storybook",
+      "sample": "yarn build && yarn workspace svelte-vega-sample dev",
+      "clean": "rm -rf ./packages/svelte-vega/dist && rm -rf ./packages/storybook/_gh-pages && rm -rf && rm -rf ./packages/sample-project/public/build",
+      "release": "yarn workspace svelte-vega semantic-release --branches main"
+    },
+    "devDependencies": {
+      "@babel/eslint-parser": "^7.21.3",
+      "@tsconfig/svelte": "^4.0.1",
+      "@typescript-eslint/eslint-plugin": "^5.57.0",
+      "@typescript-eslint/parser": "^5.57.0",
+      "commitizen": "^4.3.0",
+      "cz-conventional-changelog": "3.3.0",
+      "eslint": "^8.37.0",
+      "eslint-config-prettier": "^8.8.0",
+      "eslint-plugin-import": "^2.27.5",
+      "eslint-plugin-node": "^11.1.0",
+      "eslint-plugin-prettier": "^4.2.1",
+      "eslint-plugin-promise": "^6.1.1",
+      "eslint-plugin-svelte3": "^4.0.0",
+      "semantic-release": "^21.0.1",
+      "typescript": "^5.0.3"
+    },
+    "engines": {
+      "node": ">10",
+      "npm": ">=6",
+      "yarn": ">=1.13.0"
+    },
+    "workspaces": [
+      "./packages/*"
+    ],
+    "browserslist": [
+      "last 3 chrome versions",
+      "last 3 firefox versions",
+      "last 3 safari versions",
+      "last 3 edge versions"
+    ],
+    "config": {
+      "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+      }
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
