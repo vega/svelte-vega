@@ -1,1 +1,1 @@
-export const WIDTH_HEIGHT = new Set(["width", "height"]);
+export const WIDTH_HEIGHT = new Set(['width', 'height']);
