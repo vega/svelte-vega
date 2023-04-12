@@ -1,17 +1,16 @@
-<script lang="ts">
+<script>
   import { onDestroy, onMount } from "svelte";
-  import type { EmbedOptions } from "vega-embed";
   import { Vega } from "svelte-vega";
   import data1 from "./data1.json";
   import spec1 from "./spec1";
   import spec2 from "./spec2";
   import githubImage from "./GitHub.png";
 
-  let options: EmbedOptions = {
+  let options = {
     padding: 20,
   };
   let grow = true;
-  let interval: ReturnType<typeof setTimeout>;
+  let interval;
   let info = "";
   let data = data1;
   let width = 100;
@@ -22,9 +21,7 @@
     width,
     height,
   };
-  const handlers: {
-    tooltip: (...args: unknown[]) => void;
-  } = { tooltip: (...args) => (info = JSON.stringify(args)) };
+  const handlers = { tooltip: (...args) => (info = JSON.stringify(args)) };
 
   function handleToggleSpec() {
     if (selectedSpec === spec1) {

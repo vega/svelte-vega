@@ -1,14 +1,13 @@
-<script lang="ts">
-  import type { EmbedOptions, VisualizationSpec } from "vega-embed";
+<script>
   import { VegaLite } from "svelte-vega";
   import data1 from "./data1.json";
   import githubImage from "./GitHub.png";
 
-  export let options: EmbedOptions = {};
+  export let options = {};
 
   let selected = "";
   let data = data1;
-  let spec: VisualizationSpec = {
+  let spec = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
     description: "A simple bar chart with embedded data.",
     data: {
@@ -37,7 +36,7 @@
     data = { table };
   }
 
-  function handleSelection(...args: any) {
+  function handleSelection(...args) {
     if (args[1].category !== undefined) {
       selected = `selected column(s): ${args[1].category}`;
     } else {
