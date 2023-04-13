@@ -1,9 +1,9 @@
 ---
 name: Bug Report
 about: Create a report to help us fix a problem with Svelte-Vega.
-title: ""
-labels: "bug"
-assignees: ""
+title: ''
+labels: 'bug'
+assignees: ''
 ---
 
 Please:
@@ -16,9 +16,9 @@ Please:
 
 ```json
 {
-  "width": 500,
-  "height": 200,
-  "data": [],
-  "marks": []
+	"width": 500,
+	"height": 200,
+	"data": [],
+	"marks": []
 }
 ```
