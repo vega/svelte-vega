@@ -39,8 +39,8 @@
 		"typescript": "^5.0.3"
 	},
 	"engines": {
-		"node": ">10",
-		"npm": ">=6",
+		"node": ">16",
+		"npm": ">=8",
 		"yarn": ">=1.13.0"
 	},
 	"workspaces": [
