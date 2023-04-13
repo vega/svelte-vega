@@ -23,4 +23,4 @@ import{S as Y,i as Z,s as ee,q as i,r as _,u as T,j as te,v as m,w as ae,a as oe
   Component: ChangingDimensionDemo,
   props: args
 })`,...(X=(R=W.parameters)==null?void 0:R.docs)==null?void 0:X.source}}};const xe=["Demo","Width300","Height300","ChangingSize"];export{W as ChangingSize,U as Demo,L as Height300,G as Width300,xe as __namedExportsOrder,Ve as default};
-//# sourceMappingURL=SvelteVegaDemo.stories-f618a956.js.map
+//# sourceMappingURL=SvelteVegaDemo.stories-1f89ebfc.js.map
