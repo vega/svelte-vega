@@ -47,10 +47,7 @@
 		"./packages/*"
 	],
 	"browserslist": [
-		"last 3 chrome versions",
-		"last 3 firefox versions",
-		"last 3 safari versions",
-		"last 3 edge versions"
+		"defaults"
 	],
 	"config": {
 		"commitizen": {
