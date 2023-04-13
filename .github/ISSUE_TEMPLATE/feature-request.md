@@ -1,9 +1,9 @@
 ---
 name: Feature Request
 about: Suggest an improvement for the Svelte-Vega project.
-title: ""
-labels: "feature-request"
-assignees: ""
+title: ''
+labels: 'feature-request'
+assignees: ''
 ---
 
 Please:

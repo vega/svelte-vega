@@ -1,15 +1,15 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
-  "compilerOptions": {
-    "strict": true,
-    "types": ["svelte", "node"],
-    "noImplicitAny": true
-  },
-  "include": [
-    "packages/svelte-vega/src/**/*",
-    "packages/svelte-vega-sample/**/*",
-    "packages/sveltekit-vega-sample/**/*",
-	  "packages/storybook/stories/**/*"
-  ],
-  "exclude": ["node_modules/*"]
+	"extends": "@tsconfig/svelte/tsconfig.json",
+	"compilerOptions": {
+		"strict": true,
+		"types": ["svelte", "node"],
+		"noImplicitAny": true
+	},
+	"include": [
+		"packages/svelte-vega/src/**/*",
+		"packages/svelte-vega-sample/**/*",
+		"packages/sveltekit-vega-sample/**/*",
+		"packages/storybook/stories/**/*"
+	],
+	"exclude": ["node_modules/*"]
 }
