@@ -1,13 +1,13 @@
-import SvelteVegaLiteDemo from "./SvelteVegaLiteDemo.svelte";
+import SvelteVegaLiteDemo from './SvelteVegaLiteDemo.svelte';
 
 export default {
-  title: "svelte-vega/VegaLite",
-  component: SvelteVegaLiteDemo,
-  argTypes: {},
+	title: 'svelte-vega/VegaLite',
+	component: SvelteVegaLiteDemo,
+	argTypes: {}
 };
 
 const Template = () => ({
-  Component: SvelteVegaLiteDemo,
+	Component: SvelteVegaLiteDemo
 });
 
 export const Demo = Template.bind({});

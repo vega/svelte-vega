@@ -16,8 +16,8 @@ For documentation and installation instructions, go to [packages/svelte-vega](ht
 
 An interactive web demo of Svelte Vega and Vega-Lite components using `svelte-vega` with examples of updating data and chart variables.
 
-### Sample Project
+### Sample Projects
 
-A full Svelte example project that uses `svelte-vega`.
+Svelte and a SvelteKit example projects that use `svelte-vega`.
 
-If you are not sure how to integrate `svelte-vega` into your code, take a look at this example application.
+If you are not sure how to integrate `svelte-vega` into your code, take a look at these example applications.
