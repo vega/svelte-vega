@@ -2,7 +2,7 @@
 
 > `svelte` + `vega`|`vega-lite`
 
-> See our [Storybook Demo](http://vega.github.io/svelte-vega/).
+See our [Storybook Demo](http://vega.github.io/svelte-vega/) and the [svelte-vega package](https://github.com/vega/svelte-vega/tree/main/packages/svelte-vega).
 
 ## Packages
 
