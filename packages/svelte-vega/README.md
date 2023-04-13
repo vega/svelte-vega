@@ -9,32 +9,13 @@
 In your Svelte project, install `svelte-vega` with the following:
 
 ```bash
-yarn add @rollup/plugin-json
 yarn add svelte-vega
 ```
 
 or
 
 ```bash
-npm install @rollup/plugin-json --save
 npm install svelte-vega --save
-```
-
-Then, you must add the JSON plugin `@rollup/plugin-json` to your `rollup.config.js` file.
-
-```javascript
-import json from "@rollup/plugin-json"
-
-...
-
-export default {
-
- ...
-
-  plugins: [
-    json(),
-  ]
-}
 ```
 
 [npm-image]: https://img.shields.io/npm/v/svelte-vega.svg
