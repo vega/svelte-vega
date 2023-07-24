@@ -22,13 +22,13 @@
 		"release": "yarn workspace svelte-vega semantic-release --branches main"
 	},
 	"devDependencies": {
-		"@babel/eslint-parser": "^7.21.3",
-		"@tsconfig/svelte": "^4.0.1",
-		"@typescript-eslint/eslint-plugin": "^5.59.8",
-		"@typescript-eslint/parser": "^5.59.8",
+		"@babel/eslint-parser": "^7.22.9",
+		"@tsconfig/svelte": "^5.0.0",
+		"@typescript-eslint/eslint-plugin": "^6.1.0",
+		"@typescript-eslint/parser": "^6.1.0",
 		"commitizen": "^4.3.0",
 		"cz-conventional-changelog": "3.3.0",
-		"eslint": "^8.39.0",
+		"eslint": "^8.45.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-import": "^2.27.5",
 		"eslint-plugin-node": "^11.1.0",
@@ -37,8 +37,8 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"prettier": "^3.0.0",
 		"prettier-plugin-svelte": "^3.0.0",
-		"semantic-release": "^21.0.2",
-		"typescript": "^5.0.3"
+		"semantic-release": "^21.0.7",
+		"typescript": "^5.1.6"
 	},
 	"engines": {
 		"node": ">16",
