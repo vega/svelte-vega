@@ -27,7 +27,7 @@
 		"vega-lite": "^5.14.1"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.22.9",
+		"@babel/core": "^7.22.11",
 		"@storybook/cli": "^7.1.0",
 		"@storybook/svelte-vite": "^7.1.0",
 		"gh-pages": "^5.0.0",
