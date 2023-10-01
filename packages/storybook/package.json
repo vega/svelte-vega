@@ -17,7 +17,7 @@
 	],
 	"private": true,
 	"dependencies": {
-		"@storybook/source-loader": "^7.4.0",
+		"@storybook/source-loader": "^7.4.5",
 		"@storybook/svelte": "^7.4.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
