@@ -2674,16 +2674,16 @@
     tiny-glob "^0.2.9"
     undici "~5.26.2"
 
-"@sveltejs/package@^2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@sveltejs/package/-/package-2.2.2.tgz#cab21a584018d7118c599bec706c14fc591f5201"
-  integrity sha512-rP3sVv6cAntcdcG4r4KspLU6nZYYUrHJBAX3Arrw0KJFdgxtlsi2iDwN0Jwr/vIkgjcU0ZPWM8kkT5kpZDlWAw==
+"@sveltejs/package@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@sveltejs/package/-/package-2.2.5.tgz#379ee26fca196255936765a04df5f86d7213e79c"
+  integrity sha512-H0dFDrp7b/tr4zrUzOfqPKHG8y6ceNlGKPfSpp4ym1kTPWP79Mea5rvDlcmsbOS26FmHN/vttubalBdOCGA6qA==
   dependencies:
     chokidar "^3.5.3"
     kleur "^4.1.5"
     sade "^1.8.1"
-    semver "^7.5.3"
-    svelte2tsx "~0.6.19"
+    semver "^7.5.4"
+    svelte2tsx "~0.6.27"
 
 "@sveltejs/vite-plugin-svelte-inspector@^1.0.4":
   version "1.0.4"
@@ -9578,10 +9578,10 @@ svelte-preprocess@^5.0.4, svelte-preprocess@^5.1.0:
     sorcery "^0.11.0"
     strip-indent "^3.0.0"
 
-svelte2tsx@~0.6.19:
-  version "0.6.19"
-  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.6.19.tgz#0c1fe8432643dd2962d373243e3b8b39b559e9b2"
-  integrity sha512-h3b5OtcO8zyVL/RiB2zsDwCopeo/UH+887uyhgb2mjnewOFwiTxu+4IGuVwrrlyuh2onM2ktfUemNrNmQwXONQ==
+svelte2tsx@~0.6.27:
+  version "0.6.27"
+  resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.6.27.tgz#5b2c21f38608be51cd32de177722f123e57919e5"
+  integrity sha512-E1uPW1o6VsbRz+nUk3fznZ2lSmCITAJoNu8AYefWSvIwE2pSB01i5sId4RMbWNzfcwCQl1DcgGShCPcldl4rvg==
   dependencies:
     dedent-js "^1.0.1"
     pascal-case "^3.1.1"
