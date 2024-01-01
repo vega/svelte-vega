@@ -2411,14 +2411,7 @@
     recast "^0.23.1"
     ts-dedent "^2.0.0"
 
-"@storybook/csf@^0.1.0":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.1.1.tgz#abccc8c3e49aed0a6a7e87beb0d1c262b1921c06"
-  integrity sha512-4hE3AlNVxR60Wc5KSC68ASYzUobjPqtSKyhV6G+ge0FIXU55N5nTY7dXGRZHQGDBPq+XqchMkIdlkHPRs8nTHg==
-  dependencies:
-    type-fest "^2.19.0"
-
-"@storybook/csf@^0.1.2":
+"@storybook/csf@^0.1.0", "@storybook/csf@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.1.2.tgz#8e7452f0097507f5841b5ade3f5da1525bc9afb2"
   integrity sha512-ePrvE/pS1vsKR9Xr+o+YwdqNgHUyXvg+1Xjx0h9LrVx7Zq4zNe06pd63F5EvzTbCbJsHj7GHr9tkiaqm7U8WRA==
@@ -2549,13 +2542,13 @@
   resolved "https://registry.yarnpkg.com/@storybook/preview/-/preview-7.4.0.tgz#a58756ac9b12ea21f203032eca47991946257b53"
   integrity sha512-R4LMTvUrVAbcUetRbAXpY3frkwD0eysqHrByiR73040+ngzDwtZOBAy0JfO3jw3WrWv2dn3kWlao5aEwVc9Exw==
 
-"@storybook/source-loader@^7.4.5":
-  version "7.4.5"
-  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-7.4.5.tgz#ab9279e70029cecb22f6c74f600091bea2edbddf"
-  integrity sha512-ieo/aPgIXAJfg2raDtsboX43IXiXYHDm0MSXvNXoFE7F1jtRe7gXRi8z7O9xTX4hlIuYea0+kHe+198adgLlWA==
+"@storybook/source-loader@^7.6.7":
+  version "7.6.7"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-7.6.7.tgz#4814bce460044cc87c167123a17f143ccd6974f4"
+  integrity sha512-11uWYZwHyOMtC1vTh9AHDTh1ab1uUTeg1ZuqWJVSNSIfKNzDzeiWeqoWluzv6v3nQ5zNoMLqy8QOxbKeLiBDVw==
   dependencies:
-    "@storybook/csf" "^0.1.0"
-    "@storybook/types" "7.4.5"
+    "@storybook/csf" "^0.1.2"
+    "@storybook/types" "7.6.7"
     estraverse "^5.2.0"
     lodash "^4.17.21"
     prettier "^2.8.0"
