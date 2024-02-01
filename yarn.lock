@@ -10237,10 +10237,10 @@ vega-label@~1.2.1:
     vega-scenegraph "^4.9.2"
     vega-util "^1.15.2"
 
-vega-lite@^5.15.0:
-  version "5.15.0"
-  resolved "https://registry.yarnpkg.com/vega-lite/-/vega-lite-5.15.0.tgz#aa339a0f66df2ef4b02e729f446a91b502f541e9"
-  integrity sha512-Eac4VBhdtwbJQWH8m2OaRba/YVZbUHlmTAiPfiF3XIapJ73rcs+gHZBE1DfYgfoGjBN+5YJUMvdgm4UE7j/Ncg==
+vega-lite@^5.16.3:
+  version "5.16.3"
+  resolved "https://registry.yarnpkg.com/vega-lite/-/vega-lite-5.16.3.tgz#4443de18f9f2a76c95ff3565fe1ca201d55659c2"
+  integrity sha512-F3HO/BqlyyB1D0tf/+qy1JOmq7bHtG/nvsXcgNVUFjgVgvVKL4sMnxVnYzSsIg10x/6RFxLfwWJSd0cA8MuuUA==
   dependencies:
     json-stringify-pretty-compact "~3.0.0"
     tslib "~2.6.2"

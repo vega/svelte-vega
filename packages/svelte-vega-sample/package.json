@@ -12,7 +12,7 @@
 	"dependencies": {
 		"svelte-vega": "^1.2.0",
 		"tslib": "^2.6.2",
-		"vega-lite": "^5.15.0",
+		"vega-lite": "^5.16.3",
 		"vega": "^5.25.0"
 	},
 	"devDependencies": {
