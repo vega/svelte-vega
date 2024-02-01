@@ -26,8 +26,11 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Build Sample
-        run: yarn build:sample
+      - name: Build Sample (Svelte)
+        run: yarn build:sample:svelte
+
+      - name: Build Sample (Sveltekit)
+        run: yarn build:sample:sveltekit
 
       - name: Build Storybook
         run: yarn build:storybook
