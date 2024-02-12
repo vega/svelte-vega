@@ -1,6 +1,6 @@
 import type { View, SignalListeners } from './types';
-import pkg from 'vega-embed';
-const { vega } = pkg;
+import * as vegaEmbedPkg from 'vega-embed';
+const { vega } = vegaEmbedPkg;
 import equal from 'fast-deep-equal';
 import type { VisualizationSpec, EmbedOptions } from 'vega-embed';
 
