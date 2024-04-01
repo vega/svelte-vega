@@ -2167,10 +2167,10 @@
     "@types/express" "^4.7.0"
     file-system-cache "2.3.0"
 
-"@sveltejs/adapter-auto@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-auto/-/adapter-auto-3.1.1.tgz#7857575ddccc6f0dbd6b44190da0db6631bbfcc9"
-  integrity sha512-6LeZft2Fo/4HfmLBi5CucMYmgRxgcETweQl/yQoZo/895K3S9YWYN4Sfm/IhwlIpbJp3QNvhKmwCHbsqQNYQpw==
+"@sveltejs/adapter-auto@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@sveltejs/adapter-auto/-/adapter-auto-3.2.0.tgz#00720dfad99f95452c6e47cc64a1cb58324337d2"
+  integrity sha512-She5nKT47kwHE18v9NMe6pbJcvULr82u0V3yZ0ej3n1laWKGgkgdEABE9/ak5iDPs93LqsBkuIo51kkwCLBjJA==
   dependencies:
     import-meta-resolve "^4.0.0"
 
