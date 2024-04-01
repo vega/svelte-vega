@@ -46,7 +46,7 @@
 		"vega-embed": "^6.24.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.1.1",
+		"@sveltejs/adapter-auto": "^3.2.0",
 		"@sveltejs/kit": "^2.5.5",
 		"@sveltejs/package": "^2.3.0",
 		"@typescript-eslint/eslint-plugin": "^7.4.0",
