@@ -28,7 +28,7 @@
 	},
 	"devDependencies": {
 		"@storybook/cli": "^7.6.12",
-		"@storybook/svelte-vite": "^7.6.12",
+		"@storybook/svelte-vite": "^8.0.5",
 		"@babel/core": "^7.24.3",
 		"gh-pages": "^6.1.1",
 		"storybook": "^7.6.12",
