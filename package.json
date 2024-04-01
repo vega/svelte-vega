@@ -40,7 +40,7 @@
 		"eslint-plugin-svelte": "^2.35.1",
 		"prettier": "^3.2.5",
 		"prettier-plugin-svelte": "^3.2.2",
-		"semantic-release": "^23.0.5",
+		"semantic-release": "^23.0.6",
 		"typescript": "^5.4.2"
 	},
 	"engines": {
