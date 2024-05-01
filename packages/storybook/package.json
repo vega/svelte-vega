@@ -21,7 +21,7 @@
 		"@storybook/svelte": "^7.6.12",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"svelte": "^4.2.12",
+		"svelte": "^4.2.15",
 		"svelte-vega": "^1.2.0",
 		"vega": "^5.28.0",
 		"vega-lite": "^5.17.0"
