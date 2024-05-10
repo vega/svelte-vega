@@ -15,8 +15,11 @@
 		"svelte": "^4.2.15",
 		"svelte-check": "^3.6.8",
 		"tslib": "^2.6.2",
-		"vite": "^4.4.9",
-		"typescript": "^5.4.2"
+		"typescript": "^5.4.2",
+		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"vega-embed": "^6.25.0"
+	}
 }
