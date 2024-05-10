@@ -1,7 +1,7 @@
-import type { View, SignalListeners } from './types';
-import { vega } from 'vega-embed';
 import equal from 'fast-deep-equal';
-import type { VisualizationSpec, EmbedOptions } from 'vega-embed';
+import * as vega from 'vega';
+import type { EmbedOptions, VisualizationSpec } from 'vega-embed';
+import type { SignalListeners, View } from './types';
 
 export function updateMultipleDatasetsInView(view: View, data: Record<string, unknown>): void {
 	for (const [name, value] of Object.entries(data)) {
