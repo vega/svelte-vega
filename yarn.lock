@@ -2028,19 +2028,20 @@
     process "^0.11.10"
     util "^0.12.4"
 
-"@storybook/builder-vite@7.6.19":
-  version "7.6.19"
-  resolved "https://registry.yarnpkg.com/@storybook/builder-vite/-/builder-vite-7.6.19.tgz#35ca449edf3e47b799cd121d1890858f16a72429"
-  integrity sha512-llYpfYCHQCD0nPy+5J+H67iKcOpBrexIFO13wXxHQyl27Z+1T2JJj4cHqZs5S3a2XLiwf4df44NBvvwV5cmJmQ==
+"@storybook/builder-vite@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/builder-vite/-/builder-vite-8.0.10.tgz#ee6cc2736ed7a01b29786c51844cf778d4eecfb0"
+  integrity sha512-Rod/2jYvF4Ng1MjIMZEXe/3z0lPuxkRtetCTr3ECPgi83lHXpHJ+N0NVfJEMs+pXsVqkLP3iGt2hLn6D6yFMwA==
   dependencies:
-    "@storybook/channels" "7.6.19"
-    "@storybook/client-logger" "7.6.19"
-    "@storybook/core-common" "7.6.19"
-    "@storybook/csf-plugin" "7.6.19"
-    "@storybook/node-logger" "7.6.19"
-    "@storybook/preview" "7.6.19"
-    "@storybook/preview-api" "7.6.19"
-    "@storybook/types" "7.6.19"
+    "@storybook/channels" "8.0.10"
+    "@storybook/client-logger" "8.0.10"
+    "@storybook/core-common" "8.0.10"
+    "@storybook/core-events" "8.0.10"
+    "@storybook/csf-plugin" "8.0.10"
+    "@storybook/node-logger" "8.0.10"
+    "@storybook/preview" "8.0.10"
+    "@storybook/preview-api" "8.0.10"
+    "@storybook/types" "8.0.10"
     "@types/find-cache-dir" "^3.2.1"
     browser-assert "^1.2.1"
     es-module-lexer "^0.9.3"
@@ -2048,7 +2049,7 @@
     find-cache-dir "^3.0.0"
     fs-extra "^11.1.0"
     magic-string "^0.30.0"
-    rollup "^2.25.0 || ^3.3.0"
+    ts-dedent "^2.0.0"
 
 "@storybook/channels@7.6.19":
   version "7.6.19"
@@ -2059,6 +2060,17 @@
     "@storybook/core-events" "7.6.19"
     "@storybook/global" "^5.0.0"
     qs "^6.10.0"
+    telejson "^7.2.0"
+    tiny-invariant "^1.3.1"
+
+"@storybook/channels@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-8.0.10.tgz#56141b44001693ff99e2828deec685b7c12ff2c6"
+  integrity sha512-3JLxfD7czlx31dAGvAYJ4J4BNE/Y2+hhj/dsV3xlQTHKVpnWknaoeYEC1a6YScyfsH6W+XmP2rzZKzH4EkLSGQ==
+  dependencies:
+    "@storybook/client-logger" "8.0.10"
+    "@storybook/core-events" "8.0.10"
+    "@storybook/global" "^5.0.0"
     telejson "^7.2.0"
     tiny-invariant "^1.3.1"
 
@@ -2112,6 +2124,13 @@
   version "7.6.19"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-7.6.19.tgz#a6f91af8cdc640ace9903674b6340ad8173238cc"
   integrity sha512-oGzOxbmLmciSIfd5gsxDzPmX8DttWhoYdPKxjMuCuWLTO2TWpkCWp1FTUMWO72mm/6V/FswT/aqpJJBBvdZ3RQ==
+  dependencies:
+    "@storybook/global" "^5.0.0"
+
+"@storybook/client-logger@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-8.0.10.tgz#d3de8377f41f6c76657ba75c729596dc67c5ffcb"
+  integrity sha512-u38SbZNAunZzxZNHMJb9jkUwFkLyWxmvp4xtiRM3u9sMUShXoTnzbw1yKrxs+kYJjg+58UQPZ1JhEBRcHt5Oww==
   dependencies:
     "@storybook/global" "^5.0.0"
 
@@ -2172,10 +2191,51 @@
     resolve-from "^5.0.0"
     ts-dedent "^2.0.0"
 
+"@storybook/core-common@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/core-common/-/core-common-8.0.10.tgz#44e4c5d6ba50013012156ffbdc2fb02e92011af2"
+  integrity sha512-hsFlPieputaDQoxstnPa3pykTc4bUwEDgCHf8U43+/Z7qmLOQ9fpG+2CFW930rsCRghYpPreOvsmhY7lsGKWLQ==
+  dependencies:
+    "@storybook/core-events" "8.0.10"
+    "@storybook/csf-tools" "8.0.10"
+    "@storybook/node-logger" "8.0.10"
+    "@storybook/types" "8.0.10"
+    "@yarnpkg/fslib" "2.10.3"
+    "@yarnpkg/libzip" "2.3.0"
+    chalk "^4.1.0"
+    cross-spawn "^7.0.3"
+    esbuild "^0.18.0 || ^0.19.0 || ^0.20.0"
+    esbuild-register "^3.5.0"
+    execa "^5.0.0"
+    file-system-cache "2.3.0"
+    find-cache-dir "^3.0.0"
+    find-up "^5.0.0"
+    fs-extra "^11.1.0"
+    glob "^10.0.0"
+    handlebars "^4.7.7"
+    lazy-universal-dotenv "^4.0.0"
+    node-fetch "^2.0.0"
+    picomatch "^2.3.0"
+    pkg-dir "^5.0.0"
+    pretty-hrtime "^1.0.3"
+    resolve-from "^5.0.0"
+    semver "^7.3.7"
+    tempy "^1.0.1"
+    tiny-invariant "^1.3.1"
+    ts-dedent "^2.0.0"
+    util "^0.12.4"
+
 "@storybook/core-events@7.6.19":
   version "7.6.19"
   resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-7.6.19.tgz#cfa7d4581ad6cff1ee7eeade31d602a7d879d2b7"
   integrity sha512-K/W6Uvum0ocZSgjbi8hiotpe+wDEHDZlvN+KlPqdh9ae9xDK8aBNBq9IelCoqM+uKO1Zj+dDfSQds7CD781DJg==
+  dependencies:
+    ts-dedent "^2.0.0"
+
+"@storybook/core-events@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/core-events/-/core-events-8.0.10.tgz#03c70ca44816078e8a3479e6322a1d1f586da88a"
+  integrity sha512-TuHPS6p5ZNr4vp4butLb4R98aFx0NRYCI/7VPhJEUH5rPiqNzE3PZd8DC8rnVxavsJ+jO1/y+egNKXRYkEcoPQ==
   dependencies:
     ts-dedent "^2.0.0"
 
@@ -2226,12 +2286,12 @@
     watchpack "^2.2.0"
     ws "^8.2.3"
 
-"@storybook/csf-plugin@7.6.19":
-  version "7.6.19"
-  resolved "https://registry.yarnpkg.com/@storybook/csf-plugin/-/csf-plugin-7.6.19.tgz#5c88767f6b4f47826c9fc7fdf028132ff243239b"
-  integrity sha512-yUP0xfJyR8e6fmCgKoEt4c1EvslF8dZ8wtwVLE5hnC3kfs7xt8RVDiKLB/9NhYjY3mD/oOesX60HqRXDgJQHwA==
+"@storybook/csf-plugin@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/csf-plugin/-/csf-plugin-8.0.10.tgz#a2b04df70820140f5a3fb82d2227675641585adc"
+  integrity sha512-0EsyEx/06sCjI8sn40r7cABtBU1vUKPMPD+S5mJiZymm73BgdARj0qZOlLoK2LP+t2pcaB/Cn7KX/uyhhv7M2g==
   dependencies:
-    "@storybook/csf-tools" "7.6.19"
+    "@storybook/csf-tools" "8.0.10"
     unplugin "^1.3.1"
 
 "@storybook/csf-tools@7.6.19":
@@ -2249,7 +2309,22 @@
     recast "^0.23.1"
     ts-dedent "^2.0.0"
 
-"@storybook/csf@^0.1.2":
+"@storybook/csf-tools@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/csf-tools/-/csf-tools-8.0.10.tgz#f797c281fb10f9cb6382dc6d4ca55542f75a3c38"
+  integrity sha512-xUc6fVIKoCujf/7JZhkYjrVXeNsTSoDrZFNmqLEmtfktJVqYdXY4LuSAtlBmAIyETi09ULTuuVexrcKFwjzuBA==
+  dependencies:
+    "@babel/generator" "^7.23.0"
+    "@babel/parser" "^7.23.0"
+    "@babel/traverse" "^7.23.2"
+    "@babel/types" "^7.23.0"
+    "@storybook/csf" "^0.1.4"
+    "@storybook/types" "8.0.10"
+    fs-extra "^11.1.0"
+    recast "^0.23.5"
+    ts-dedent "^2.0.0"
+
+"@storybook/csf@^0.1.2", "@storybook/csf@^0.1.4":
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/@storybook/csf/-/csf-0.1.7.tgz#dcc6c16a353bc09c8c619ba1a23ba93b2aab0b9d"
   integrity sha512-53JeLZBibjQxi0Ep+/AJTfxlofJlxy1jXcSKENlnKxHjWEYyHQCumMP5yTFjf7vhNnMjEpV3zx6t23ssFiGRyw==
@@ -2274,6 +2349,20 @@
     doctrine "^3.0.0"
     lodash "^4.17.21"
 
+"@storybook/docs-tools@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/docs-tools/-/docs-tools-8.0.10.tgz#8ab6f9ce2485814288de25a57ca16c842cc214d3"
+  integrity sha512-rg9KS81vEh13VMr4mAgs+7L4kYqoRtG7kVfV1WHxzJxjR3wYcVR0kP9gPTWV4Xha/TA3onHu9sxKxMTWha0urQ==
+  dependencies:
+    "@storybook/core-common" "8.0.10"
+    "@storybook/core-events" "8.0.10"
+    "@storybook/preview-api" "8.0.10"
+    "@storybook/types" "8.0.10"
+    "@types/doctrine" "^0.0.3"
+    assert "^2.1.0"
+    doctrine "^3.0.0"
+    lodash "^4.17.21"
+
 "@storybook/global@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@storybook/global/-/global-5.0.0.tgz#b793d34b94f572c1d7d9e0f44fac4e0dbc9572ed"
@@ -2288,6 +2377,11 @@
   version "7.6.19"
   resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-7.6.19.tgz#8a911288ee8052cf2c77cf5e2db2367b1b852b43"
   integrity sha512-2g29QC44Zl1jKY37DmQ0/dO7+VSKnGgPI/x0mwVwQffypSapxH3rwLLT5Q5XLHeFyD+fhRu5w9Cj4vTGynJgpA==
+
+"@storybook/node-logger@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-8.0.10.tgz#dc48f174b26e44a7fbfbbc497797496dd208fcb9"
+  integrity sha512-UMmaUaA3VOX/mKLsSvOnbZre2/1tZ6hazA6H0eAnClKb51jRD1AJrsBYK+uHr/CAp7t710bB5U8apPov7hayDw==
 
 "@storybook/preview-api@7.6.19":
   version "7.6.19"
@@ -2309,10 +2403,30 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/preview@7.6.19":
-  version "7.6.19"
-  resolved "https://registry.yarnpkg.com/@storybook/preview/-/preview-7.6.19.tgz#4cb2b2e1730aea8612c07d80a7908835f9806265"
-  integrity sha512-VqRPua2koOQTOteB+VvuKNXFYQ7IDEopaPpj9Nx+3kom+bqp0hWdAysWcm6CtKN2GGzBQm+5PvGibMNdawsaVg==
+"@storybook/preview-api@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/preview-api/-/preview-api-8.0.10.tgz#daee994663fff358de4ceb0ce1108e2c099dfb42"
+  integrity sha512-uZ6btF7Iloz9TnDcKLQ5ydi2YK0cnulv/8FLQhBCwSrzLLLb+T2DGz0cAeuWZEvMUNWNmkWJ9PAFQFs09/8p/Q==
+  dependencies:
+    "@storybook/channels" "8.0.10"
+    "@storybook/client-logger" "8.0.10"
+    "@storybook/core-events" "8.0.10"
+    "@storybook/csf" "^0.1.4"
+    "@storybook/global" "^5.0.0"
+    "@storybook/types" "8.0.10"
+    "@types/qs" "^6.9.5"
+    dequal "^2.0.2"
+    lodash "^4.17.21"
+    memoizerific "^1.11.3"
+    qs "^6.10.0"
+    tiny-invariant "^1.3.1"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/preview@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/preview/-/preview-8.0.10.tgz#3fc29ae45f1b95fc5ccb90f1d474df25449b118f"
+  integrity sha512-op7gZqop8PSFyPA4tc1Zds8jG6VnskwpYUUsa44pZoEez9PKEFCf4jE+7AQwbBS3hnuCb0CKBfASN8GRyoznbw==
 
 "@storybook/source-loader@^7.6.12":
   version "7.6.19"
@@ -2325,21 +2439,35 @@
     lodash "^4.17.21"
     prettier "^2.8.0"
 
-"@storybook/svelte-vite@^7.6.12":
-  version "7.6.19"
-  resolved "https://registry.yarnpkg.com/@storybook/svelte-vite/-/svelte-vite-7.6.19.tgz#4019202336dfbd652b16dde1bf849442a3de72f9"
-  integrity sha512-+7eHb7pAnO2tW049N+Ku/onf0QkXQ1EXD7OndTBNMboygGEVs1NyY56HzsgCaIGkv73IrxX0lBaQU2IAf58LFg==
+"@storybook/svelte-vite@^8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/svelte-vite/-/svelte-vite-8.0.10.tgz#95fab3cea1dbcde3d6cc2540df67f65b05c65c27"
+  integrity sha512-ulyTDLwPxz7jLcEK9p1aVxSFqeuAlffLF86n5BkvvMZWow6V9MRSDR1JMJ36T8p8namGbVC04VoIk49LbQgEuQ==
   dependencies:
-    "@storybook/builder-vite" "7.6.19"
-    "@storybook/node-logger" "7.6.19"
-    "@storybook/svelte" "7.6.19"
-    "@sveltejs/vite-plugin-svelte" "^2.4.2"
+    "@storybook/builder-vite" "8.0.10"
+    "@storybook/node-logger" "8.0.10"
+    "@storybook/svelte" "8.0.10"
     magic-string "^0.30.0"
-    svelte-preprocess "^5.0.4"
+    svelte-preprocess "^5.1.1"
     sveltedoc-parser "^4.2.1"
     ts-dedent "^2.2.0"
 
-"@storybook/svelte@7.6.19", "@storybook/svelte@^7.6.12":
+"@storybook/svelte@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/svelte/-/svelte-8.0.10.tgz#8131c599aedb8e30ddb28b4c2436642f025a602e"
+  integrity sha512-dNXLNPBOHxdxgObsFkPdzshb2eGyyC3XWoRS6pRfHKbckYTVGu9Y5v+eI6EDnOjJeTJr+7xk+RHO9xV7l3AfPQ==
+  dependencies:
+    "@storybook/client-logger" "8.0.10"
+    "@storybook/core-events" "8.0.10"
+    "@storybook/docs-tools" "8.0.10"
+    "@storybook/global" "^5.0.0"
+    "@storybook/preview-api" "8.0.10"
+    "@storybook/types" "8.0.10"
+    sveltedoc-parser "^4.2.1"
+    ts-dedent "^2.0.0"
+    type-fest "~2.19"
+
+"@storybook/svelte@^7.6.12":
   version "7.6.19"
   resolved "https://registry.yarnpkg.com/@storybook/svelte/-/svelte-7.6.19.tgz#6145d59b2334fba54fcbdfeacfe84591c10361a1"
   integrity sha512-Rg9NnvKT72KyVmxBiaX6Ug4u4FkLcqphqEt4ZbasR0ohOjX9iY6C9uDvyfnJazpukGpEakCBCMpsXAFW4Z/qLQ==
@@ -2379,6 +2507,15 @@
     "@types/express" "^4.7.0"
     file-system-cache "2.3.0"
 
+"@storybook/types@8.0.10":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@storybook/types/-/types-8.0.10.tgz#99864aa267d9761e649b28a8b26a782f78c29de7"
+  integrity sha512-S/hKS7+SqNnYIehwxdQ4M2nnlfGDdYWAXdtPCVJCmS+YF2amgAxeuisiHbUg7eypds6VL0Oxk/j2nPEHOHk9pg==
+  dependencies:
+    "@storybook/channels" "8.0.10"
+    "@types/express" "^4.7.0"
+    file-system-cache "2.3.0"
+
 "@sveltejs/adapter-auto@^3.2.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@sveltejs/adapter-auto/-/adapter-auto-3.2.0.tgz#00720dfad99f95452c6e47cc64a1cb58324337d2"
@@ -2415,32 +2552,12 @@
     semver "^7.5.4"
     svelte2tsx "~0.7.0"
 
-"@sveltejs/vite-plugin-svelte-inspector@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte-inspector/-/vite-plugin-svelte-inspector-1.0.4.tgz#c99fcb73aaa845a3e2c0563409aeb3ee0b863add"
-  integrity sha512-zjiuZ3yydBtwpF3bj0kQNV0YXe+iKE545QGZVTaylW3eAzFr+pJ/cwK8lZEaRp4JtaJXhD5DyWAV4AxLh6DgaQ==
-  dependencies:
-    debug "^4.3.4"
-
 "@sveltejs/vite-plugin-svelte-inspector@^2.0.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte-inspector/-/vite-plugin-svelte-inspector-2.1.0.tgz#116ba2b73be43c1d7d93de749f37becc7e45bb8c"
   integrity sha512-9QX28IymvBlSCqsCll5t0kQVxipsfhFFL+L2t3nTWfXnddYwxBuAEtTtlaVQpRz9c37BhJjltSeY4AJSC03SSg==
   dependencies:
     debug "^4.3.4"
-
-"@sveltejs/vite-plugin-svelte@^2.4.2":
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-2.5.3.tgz#23f810d0c38d159491845175c2566a51639be3fc"
-  integrity sha512-erhNtXxE5/6xGZz/M9eXsmI7Pxa6MS7jyTy06zN3Ck++ldrppOnOlJwHHTsMC7DHDQdgUp4NAc4cDNQ9eGdB/w==
-  dependencies:
-    "@sveltejs/vite-plugin-svelte-inspector" "^1.0.4"
-    debug "^4.3.4"
-    deepmerge "^4.3.1"
-    kleur "^4.1.5"
-    magic-string "^0.30.3"
-    svelte-hmr "^0.15.3"
-    vitefu "^0.2.4"
 
 "@sveltejs/vite-plugin-svelte@^3.0.2":
   version "3.1.0"
@@ -4482,7 +4599,7 @@ esbuild@^0.18.0, esbuild@^0.18.10:
     "@esbuild/win32-ia32" "0.18.20"
     "@esbuild/win32-x64" "0.18.20"
 
-esbuild@^0.20.1:
+"esbuild@^0.18.0 || ^0.19.0 || ^0.20.0", esbuild@^0.20.1:
   version "0.20.2"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.20.2.tgz#9d6b2386561766ee6b5a55196c6d766d28c87ea1"
   integrity sha512-WdOOppmUNU+IbZ0PaDiTst80zjnrOkyJNHoKupIcVyU8Lvla3Ugx94VzkQ32Ijqd7UhHJy75gNWDMUekcrSJ6g==
@@ -6752,7 +6869,7 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-magic-string@^0.30.0, magic-string@^0.30.3, magic-string@^0.30.4, magic-string@^0.30.5, magic-string@^0.30.9:
+magic-string@^0.30.0, magic-string@^0.30.4, magic-string@^0.30.5, magic-string@^0.30.9:
   version "0.30.10"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.30.10.tgz#123d9c41a0cb5640c892b041d4cfb3bd0aa4b39e"
   integrity sha512-iIRwTIf0QKV3UAnYK4PU8uiEc4SRh5jX0mwpIwETPpHdhVM4f53RSwS/vXvN1JhGX+Cs7B8qIq3d6AH49O5fAQ==
@@ -8276,7 +8393,7 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-recast@^0.23.1, recast@^0.23.3:
+recast@^0.23.1, recast@^0.23.3, recast@^0.23.5:
   version "0.23.6"
   resolved "https://registry.yarnpkg.com/recast/-/recast-0.23.6.tgz#198fba74f66143a30acc81929302d214ce4e3bfa"
   integrity sha512-9FHoNjX1yjuesMwuthAmPKabxYQdOgihFYmT5ebXfYGBcnqXZf3WOVz+5foEZ8Y83P4ZY6yQD5GMmtV+pgCCAQ==
@@ -8433,7 +8550,7 @@ robust-predicates@^3.0.2:
   resolved "https://registry.yarnpkg.com/robust-predicates/-/robust-predicates-3.0.2.tgz#d5b28528c4824d20fc48df1928d41d9efa1ad771"
   integrity sha512-IXgzBWvWQwE6PrDI05OvmXUIruQTcoMDzRsOd5CDvHCVLcLHMTSYvOK5Cm46kWqlV3yAbuSpBZdJ5oP5OUoStg==
 
-"rollup@^2.25.0 || ^3.3.0", rollup@^3.27.1:
+rollup@^3.27.1:
   version "3.29.4"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.29.4.tgz#4d70c0f9834146df8705bfb69a9a19c9e1109981"
   integrity sha512-oWzmBZwvYrU0iJHtDmhsm662rC15FRXmcjCk1xD771dFDx5jJ02ufAQQTn0etB2emNk4J9EZg/yWKpsn9BWGRw==
@@ -9113,11 +9230,6 @@ svelte-hmr@^0.14.2:
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.12.tgz#a127aec02f1896500b10148b2d4d21ddde39973f"
   integrity sha512-4QSW/VvXuqVcFZ+RhxiR8/newmwOCTlbYIezvkeN6302YFRE8cXy0naamHcjz8Y9Ce3ITTZtrHrIL0AGfyo61w==
 
-svelte-hmr@^0.15.3:
-  version "0.15.3"
-  resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.15.3.tgz#df54ccde9be3f091bf5f18fc4ef7b8eb6405fbe6"
-  integrity sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==
-
 svelte-hmr@^0.16.0:
   version "0.16.0"
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.16.0.tgz#9f345b7d1c1662f1613747ed7e82507e376c1716"
@@ -9132,7 +9244,7 @@ svelte-loader@^3.2.0:
     svelte-dev-helper "^1.1.9"
     svelte-hmr "^0.14.2"
 
-svelte-preprocess@^5.0.4, svelte-preprocess@^5.1.3:
+svelte-preprocess@^5.1.1, svelte-preprocess@^5.1.3:
   version "5.1.4"
   resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-5.1.4.tgz#14ada075c94bbd2b71c5ec70ff72f8ebe1c95b91"
   integrity sha512-IvnbQ6D6Ao3Gg6ftiM5tdbR6aAETwjhHV+UKGf5bHGYR69RQvF1ho0JKPcbUON4vy4R7zom13jPjgdOWCQ5hDA==
@@ -10121,7 +10233,7 @@ vite@^5.0.3:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vitefu@^0.2.4, vitefu@^0.2.5:
+vitefu@^0.2.5:
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/vitefu/-/vitefu-0.2.5.tgz#c1b93c377fbdd3e5ddd69840ea3aa70b40d90969"
   integrity sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==
