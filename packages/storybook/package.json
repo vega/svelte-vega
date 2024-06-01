@@ -23,7 +23,7 @@
 		"react-dom": "^18.2.0",
 		"svelte": "^4.2.15",
 		"svelte-vega": "^1.2.0",
-		"vega": "^5.28.0",
+		"vega": "^5.29.0",
 		"vega-embed": "^6.25.0",
 		"vega-lite": "^5.18.1"
 	},
