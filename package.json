@@ -41,7 +41,7 @@
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.2",
 		"semantic-release": "^23.0.6",
-		"typescript": "^5.4.2"
+		"typescript": "^5.5.4"
 	},
 	"engines": {
 		"node": ">16",
