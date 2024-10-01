@@ -21,7 +21,7 @@ jobs:
       - name: Build the storybook
         run: yarn build:storybook
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.6.3
+        uses: JamesIves/github-pages-deploy-action@v4.6.8
         with:
           branch: gh-pages
           folder: packages/storybook/_gh-pages
