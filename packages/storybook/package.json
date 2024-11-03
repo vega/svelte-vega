@@ -32,7 +32,7 @@
 		"@storybook/cli": "^7.6.12",
 		"@storybook/svelte-vite": "^7.6.12",
 		"gh-pages": "^6.1.1",
-		"storybook": "^7.6.12",
+		"storybook": "^8.4.1",
 		"svelte-check": "^4.0.5",
 		"svelte-loader": "^3.2.0",
 		"svelte-preprocess": "^5.1.3",
