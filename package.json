@@ -1,61 +1,61 @@
 {
-  "name": "svelte-vega-monorepo",
-  "version": "0.0.0",
-  "description": "Providing a Svelte Vega component and a demo for it.",
-  "author": "Alex B\u00e4uerle <bauerlealex@gmail.com> (https://a13x.io)",
-  "repository": "git@github.com:vega/svelte-vega.git",
-  "bugs": {
-    "url": "https://github.com/vega/svelte-vega/issues"
-  },
-  "private": true,
-  "license": "BSD-3-Clause",
-  "scripts": {
-    "postpublish": "git push; git push --tags",
-    "build": "npm run -w svelte-vega build",
-    "build:sample:svelte": "npm run build && npm run -w svelte-vega-sample build",
-    "build:sample:sveltekit": "npm run build && npm run -w sveltekit-vega-sample build",
-    "build:storybook": "npm run build && npm run -w svelte-vega-demo demo:build",
-    "lint": "prettier --check . && eslint . --ext .svelte,.ts,.js",
-    "lint:fix": "prettier --write . && eslint . --ext .svelte,.ts,.js --fix",
-    "storybook": "npm run build && npm run -w svelte-vega-demo storybook",
-    "sample:svelte": "npm run build && npm run -w svelte-vega-sample dev",
-    "sample:sveltekit": "npm run build && npm run -w sveltekit-vega-sample dev",
-    "clean": "rm -rf ./packages/svelte-vega/dist && rm -rf ./packages/storybook/_gh-pages && rm -rf && rm -rf ./packages/sample-project/public/build",
-    "release": "npm run -w svelte-vega semantic-release --branches main"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.24.3",
-    "@babel/eslint-parser": "^7.24.7",
-    "@tsconfig/svelte": "^5.0.2",
-    "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.15.0",
-    "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "3.3.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.30.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-promise": "^7.1.0",
-    "eslint-plugin-svelte": "^2.38.0",
-    "prettier": "^3.3.3",
-    "prettier-plugin-svelte": "^3.2.2",
-    "semantic-release": "^23.0.6",
-    "typescript": "^5.5.4"
-  },
-  "engines": {
-    "node": ">16",
-    "npm": ">=8"
-  },
-  "workspaces": [
-    "./packages/*"
-  ],
-  "browserslist": [
-    "defaults"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  }
+	"name": "svelte-vega-monorepo",
+	"version": "0.0.0",
+	"description": "Providing a Svelte Vega component and a demo for it.",
+	"author": "Alex Bäuerle <bauerlealex@gmail.com> (https://a13x.io)",
+	"repository": "git@github.com:vega/svelte-vega.git",
+	"bugs": {
+		"url": "https://github.com/vega/svelte-vega/issues"
+	},
+	"private": true,
+	"license": "BSD-3-Clause",
+	"scripts": {
+		"postpublish": "git push; git push --tags",
+		"build": "npm run -w svelte-vega build",
+		"build:sample:svelte": "npm run build && npm run -w svelte-vega-sample build",
+		"build:sample:sveltekit": "npm run build && npm run -w sveltekit-vega-sample build",
+		"build:storybook": "npm run build && npm run -w svelte-vega-demo demo:build",
+		"lint": "prettier --check . && eslint . --ext .svelte,.ts,.js",
+		"lint:fix": "prettier --write . && eslint . --ext .svelte,.ts,.js --fix",
+		"storybook": "npm run build && npm run -w svelte-vega-demo storybook",
+		"sample:svelte": "npm run build && npm run -w svelte-vega-sample dev",
+		"sample:sveltekit": "npm run build && npm run -w sveltekit-vega-sample dev",
+		"clean": "rm -rf ./packages/svelte-vega/dist && rm -rf ./packages/storybook/_gh-pages && rm -rf && rm -rf ./packages/sample-project/public/build",
+		"release": "npm run -w svelte-vega semantic-release --branches main"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.24.3",
+		"@babel/eslint-parser": "^7.24.7",
+		"@tsconfig/svelte": "^5.0.2",
+		"@typescript-eslint/eslint-plugin": "^7.4.0",
+		"@typescript-eslint/parser": "^7.15.0",
+		"commitizen": "^4.3.0",
+		"cz-conventional-changelog": "3.3.0",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.30.0",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^5.2.1",
+		"eslint-plugin-promise": "^7.1.0",
+		"eslint-plugin-svelte": "^2.38.0",
+		"prettier": "^3.3.3",
+		"prettier-plugin-svelte": "^3.2.2",
+		"semantic-release": "^23.0.6",
+		"typescript": "^5.5.4"
+	},
+	"engines": {
+		"node": ">16",
+		"npm": ">=8"
+	},
+	"workspaces": [
+		"./packages/*"
+	],
+	"browserslist": [
+		"defaults"
+	],
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
 }
