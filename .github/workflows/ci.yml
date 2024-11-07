@@ -32,8 +32,5 @@ jobs:
       - name: Build Sample (Sveltekit)
         run: yarn build:sample:sveltekit
 
-      - name: Build Storybook
-        run: yarn build:storybook
-
       - name: Lint
         run: yarn lint

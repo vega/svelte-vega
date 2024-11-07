@@ -1,8 +1,6 @@
 # svelte-vega [![NPM version][npm-image]][npm-url]
 
-> Easy usage of `vega` or `vega-lite` in `svelte` applications!
-
-> See our [Storybook Demo](http://vega.github.io/svelte-vega/).
+> Use `vega` or `vega-lite` in `svelte` applications!
 
 ## Install
 

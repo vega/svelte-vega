@@ -8,8 +8,7 @@
 	"include": [
 		"packages/svelte-vega/src/**/*",
 		"packages/svelte-vega-sample/**/*",
-		"packages/sveltekit-vega-sample/**/*",
-		"packages/storybook/stories/**/*"
+		"packages/sveltekit-vega-sample/**/*"
 	],
 	"exclude": ["node_modules/*"]
 }
