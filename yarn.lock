@@ -6409,10 +6409,10 @@ vega-dataflow@^5.7.6, vega-dataflow@~5.7.6:
     vega-loader "^4.5.2"
     vega-util "^1.17.2"
 
-vega-embed@^6.27.1:
-  version "6.27.1"
-  resolved "https://registry.yarnpkg.com/vega-embed/-/vega-embed-6.27.1.tgz#d6b677314fa071afacbc3a6cddff5937aa5fad2b"
-  integrity sha512-DjqpIVLM2moLoIJtsW/oyqO1EqcKMqbAynltaFB0UMtKmegwSljDylcv/NMVJNRf67Xggd+RbYA1rkbFGrNg7w==
+vega-embed@^6.28.0:
+  version "6.28.0"
+  resolved "https://registry.yarnpkg.com/vega-embed/-/vega-embed-6.28.0.tgz#18ea7ea24e12df4d6075496ce4dd601fca23ce0d"
+  integrity sha512-QCjrNCDZPrSOZPG3UmfFZsd95mUQEZSYAWdoi2TOEnzBv/NzB+BX+Fc6jdpcAHsORn3TqxL0um/jktyjnV88zg==
   dependencies:
     fast-json-patch "^3.1.1"
     json-stringify-pretty-compact "^3.0.0"

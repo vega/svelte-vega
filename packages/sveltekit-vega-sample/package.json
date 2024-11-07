@@ -20,6 +20,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"vega-embed": "^6.27.1"
+		"vega-embed": "^6.28.0"
 	}
 }
