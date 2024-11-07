@@ -138,4 +138,4 @@
 	}
 </script>
 
-<div bind:this={chartContainer} />
+<div bind:this={chartContainer}></div>

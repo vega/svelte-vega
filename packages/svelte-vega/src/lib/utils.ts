@@ -48,7 +48,6 @@ export function removeSignalListenersFromView(
 		try {
 			view.removeSignalListener(signalName, signalListeners[signalName]);
 		} catch (error) {
-			// eslint-disable-next-line no-console
 			console.warn('Cannot remove invalid signal listener.', error);
 		}
 	}

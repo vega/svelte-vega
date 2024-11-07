@@ -27,12 +27,6 @@ svelte-vega/
 
 ### Development
 
-#### Run storybook
-
-```sh
-yarn storybook
-```
-
 #### Run sample
 
 ```sh
