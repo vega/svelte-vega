@@ -1,16 +1,23 @@
 <script lang="ts">
 	import type { EmbedOptions, Mode } from 'vega-embed';
-	import type { SignalListeners, VisualizationSpec, View } from './types';
+	import type { SignalListeners, View, VisualizationSpec } from './types';
 	import VegaEmbed from './VegaEmbed.svelte';
 
-	export let spec: VisualizationSpec;
-	export let options: EmbedOptions = {};
-	export let data: Record<string, unknown> = {};
-	export let signalListeners: SignalListeners = {};
-	export let view: View | undefined = undefined;
+	let {
+		spec,
+		options,
+		data,
+		signalListeners,
+		view = $bindable()
+	}: {
+		spec: VisualizationSpec;
+		options: EmbedOptions;
+		data: Record<string, unknown>;
+		signalListeners: SignalListeners;
+		view: View | undefined;
+	} = $props();
 
-	const mode = 'vega' as Mode;
-	$: vegaOptions = { ...options, mode: mode };
+	const vegaOptions = $derived({ ...options, mode: 'vega' as Mode });
 </script>
 
 <VegaEmbed

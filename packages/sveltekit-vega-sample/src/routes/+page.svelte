@@ -1,6 +1,6 @@
 <script lang="ts">
+	import type { View, VisualizationSpec } from 'svelte-vega';
 	import { Vega, VegaLite } from 'svelte-vega';
-	import type { VisualizationSpec, View } from 'svelte-vega';
 
 	const data = {
 		table: [
@@ -15,8 +15,8 @@
 		]
 	};
 
-	let viewVL: View;
-	let specVL: VisualizationSpec = {
+	let viewVL: View | undefined = $state(undefined);
+	const specVL: VisualizationSpec = {
 		$schema: 'https://vega.github.io/schema/vega-lite/v5.json',
 		description: 'A simple bar chart with embedded data.',
 		data: {
@@ -29,7 +29,7 @@
 		}
 	};
 
-	let viewV: View;
+	let viewV: View | undefined = $state(undefined);
 	const specV: VisualizationSpec = {
 		$schema: 'https://vega.github.io/schema/vega/v5.json',
 		width: 400,
@@ -111,8 +111,8 @@
 		]
 	};
 
-	$: viewVL ? console.log('Vega-Lite view: ', viewVL.data('table')) : '';
-	$: viewV ? console.log('Vega view: ', viewV.data('table')) : '';
+	$inspect('Vega-Lite view: ', viewVL ? viewVL.data('table') : '');
+	$inspect('Vega view: ', viewV ? viewV.data('table') : '');
 </script>
 
 <main>

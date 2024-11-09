@@ -5973,6 +5973,14 @@ svelte-preprocess@^6.0.3:
   resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-6.0.3.tgz#fdc1f9dc41b6f22bf8b1f059e9f21eaaae181eeb"
   integrity sha512-PLG2k05qHdhmRG7zR/dyo5qKvakhm8IJ+hD2eFRQmMLHp7X3eJnjeupUtvuRpbNiF31RjVw45W+abDwHEmP5OA==
 
+svelte-vega@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/svelte-vega/-/svelte-vega-1.2.0.tgz#ec8c835837a15198b1ac26c90abd07ef41bc4647"
+  integrity sha512-MsDdO+l7o/d9d4mVkh8MBDhqZvJ45lpuprBaTj0V/ZilIG902QERHFQlam3ZFcR9C9OIKSpmPqINssWNPkDdcA==
+  dependencies:
+    fast-deep-equal "^3.1.3"
+    vega-embed "^6.21.0"
+
 svelte2tsx@~0.7.16:
   version "0.7.22"
   resolved "https://registry.yarnpkg.com/svelte2tsx/-/svelte2tsx-0.7.22.tgz#2051d61d8581c538b39ce7c029ca9a4680113a83"
@@ -6409,7 +6417,7 @@ vega-dataflow@^5.7.6, vega-dataflow@~5.7.6:
     vega-loader "^4.5.2"
     vega-util "^1.17.2"
 
-vega-embed@^6.28.0:
+vega-embed@^6.21.0, vega-embed@^6.28.0:
   version "6.28.0"
   resolved "https://registry.yarnpkg.com/vega-embed/-/vega-embed-6.28.0.tgz#18ea7ea24e12df4d6075496ce4dd601fca23ce0d"
   integrity sha512-QCjrNCDZPrSOZPG3UmfFZsd95mUQEZSYAWdoi2TOEnzBv/NzB+BX+Fc6jdpcAHsORn3TqxL0um/jktyjnV88zg==
