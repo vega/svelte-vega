@@ -2,7 +2,7 @@
 	import type { EmbedOptions, Result } from 'vega-embed';
 	import type { SignalListeners, View, VisualizationSpec } from './types';
 
-	import { createEventDispatcher, onDestroy } from 'svelte';
+	import { onDestroy } from 'svelte';
 	import vegaEmbed from 'vega-embed';
 
 	import { WIDTH_HEIGHT } from './constants';
@@ -20,20 +20,22 @@
 		spec,
 		view = $bindable(),
 		signalListeners,
-		data
+		data,
+		onError,
+		onNewView
 	}: {
 		options: EmbedOptions;
 		spec: VisualizationSpec;
 		view: View | undefined;
-		signalListeners: SignalListeners;
+		signalListeners?: SignalListeners;
 		data: Record<string, unknown>;
+		onError?: (error: Error) => void;
+		onNewView?: (view: View) => void;
 	} = $props();
-
-	const dispatch = createEventDispatcher();
 
 	let result: Result | undefined = $state(undefined);
 	let prevOptions: EmbedOptions = $state({});
-	let prevSignalListeners: SignalListeners = $state({});
+	let prevSignalListeners: SignalListeners | undefined = $state(undefined);
 	let prevSpec: VisualizationSpec = $state({});
 	let prevData: Record<string, unknown> = $state({});
 	let chartContainer: HTMLElement | undefined = $state(undefined);
@@ -109,12 +111,12 @@
 		try {
 			result = await vegaEmbed(chartContainer, spec, options);
 			view = result.view;
-			if (addSignalListenersToView(view, signalListeners)) {
+			if (signalListeners && addSignalListenersToView(view, signalListeners)) {
 				view.runAsync();
 			}
-			onNewView(view);
+			newView(view);
 		} catch (e) {
-			handleError(e as Error);
+			error(e as Error);
 		}
 	}
 
@@ -126,18 +128,14 @@
 		}
 	}
 
-	function handleError(error: Error) {
-		dispatch('onError', {
-			error: error
-		});
+	function error(error: Error) {
+		onError?.(error);
 		console.warn(error);
 	}
 
-	function onNewView(view: View) {
+	function newView(view: View) {
 		update();
-		dispatch('onNewView', {
-			view: view
-		});
+		onNewView?.(view);
 	}
 
 	async function update() {

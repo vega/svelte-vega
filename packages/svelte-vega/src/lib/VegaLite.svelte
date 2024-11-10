@@ -8,13 +8,17 @@
 		options,
 		data,
 		signalListeners,
-		view = $bindable()
+		view = $bindable(),
+		onNewView,
+		onError
 	}: {
 		spec: VisualizationSpec;
-		options: EmbedOptions;
+		options?: EmbedOptions;
 		data: Record<string, unknown>;
-		signalListeners: SignalListeners;
+		signalListeners?: SignalListeners;
 		view: View | undefined;
+		onNewView?: (view: View) => void;
+		onError?: (error: Error) => void;
 	} = $props();
 
 	const vegaLiteOptions = $derived({ ...options, mode: 'vega-lite' as Mode });
@@ -26,6 +30,6 @@
 	{signalListeners}
 	options={vegaLiteOptions}
 	bind:view
-	on:onNewView
-	on:onError
+	{onNewView}
+	{onError}
 />
