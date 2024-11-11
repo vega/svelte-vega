@@ -2,42 +2,52 @@
 	import type { EmbedOptions, Result } from 'vega-embed';
 	import type { SignalListeners, View, VisualizationSpec } from './types';
 
-	import { createEventDispatcher, onDestroy } from 'svelte';
+	import { onDestroy } from 'svelte';
 	import vegaEmbed from 'vega-embed';
 
 	import { WIDTH_HEIGHT } from './constants';
 	import {
 		addSignalListenersToView,
-		updateMultipleDatasetsInView,
 		combineSpecWithDimension,
 		computeSpecChanges,
 		removeSignalListenersFromView,
-		shallowEqual
+		shallowEqual,
+		updateMultipleDatasetsInView
 	} from './utils';
 
-	export let options: EmbedOptions;
-	export let spec: VisualizationSpec;
-	export let view: View | undefined;
-	export let signalListeners: SignalListeners = {};
-	export let data: Record<string, unknown> = {};
+	let {
+		options,
+		spec,
+		view = $bindable(),
+		signalListeners,
+		data,
+		onError,
+		onNewView
+	}: {
+		options: EmbedOptions;
+		spec: VisualizationSpec;
+		view: View | undefined;
+		signalListeners?: SignalListeners;
+		data: Record<string, unknown>;
+		onError?: (error: Error) => void;
+		onNewView?: (view: View) => void;
+	} = $props();
 
-	const dispatch = createEventDispatcher();
+	let result: Result | undefined = $state(undefined);
+	let prevOptions: EmbedOptions = $state({});
+	let prevSignalListeners: SignalListeners | undefined = $state(undefined);
+	let prevSpec: VisualizationSpec = $state({});
+	let prevData: Record<string, unknown> = $state({});
+	let chartContainer: HTMLElement | undefined = $state(undefined);
 
-	let result: Result | undefined = undefined;
-	let prevOptions: EmbedOptions = {};
-	let prevSignalListeners: SignalListeners = {};
-	let prevSpec: VisualizationSpec = {};
-	let prevData: Record<string, unknown> = {};
-	let chartContainer: HTMLElement;
-
-	$: {
+	$effect(() => {
 		if (!shallowEqual(data, prevData)) {
 			update();
 		}
 		prevData = data;
-	}
+	});
 
-	$: {
+	$effect(() => {
 		if (chartContainer !== undefined) {
 			// only create a new view if neccessary
 			if (!shallowEqual(options, prevOptions, WIDTH_HEIGHT)) {
@@ -87,23 +97,26 @@
 			prevSignalListeners = signalListeners;
 			prevSpec = spec;
 		}
-	}
+	});
 
 	onDestroy(() => {
 		clearView();
 	});
 
 	async function createView() {
+		if (chartContainer === undefined) {
+			return;
+		}
 		clearView();
 		try {
 			result = await vegaEmbed(chartContainer, spec, options);
 			view = result.view;
-			if (addSignalListenersToView(view, signalListeners)) {
+			if (signalListeners && addSignalListenersToView(view, signalListeners)) {
 				view.runAsync();
 			}
-			onNewView(view);
+			newView(view);
 		} catch (e) {
-			handleError(e as Error);
+			error(e as Error);
 		}
 	}
 
@@ -115,18 +128,14 @@
 		}
 	}
 
-	function handleError(error: Error) {
-		dispatch('onError', {
-			error: error
-		});
+	function error(error: Error) {
+		onError?.(error);
 		console.warn(error);
 	}
 
-	function onNewView(view: View) {
+	function newView(view: View) {
 		update();
-		dispatch('onNewView', {
-			view: view
-		});
+		onNewView?.(view);
 	}
 
 	async function update() {

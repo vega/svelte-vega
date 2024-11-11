@@ -1,24 +1,27 @@
 <script lang="ts">
 	import type { EmbedOptions, Mode } from 'vega-embed';
-	import type { SignalListeners, VisualizationSpec, View } from './types';
+	import type { SignalListeners, View, VisualizationSpec } from './types';
 	import VegaEmbed from './VegaEmbed.svelte';
 
-	export let spec: VisualizationSpec;
-	export let options: EmbedOptions = {};
-	export let data: Record<string, unknown> = {};
-	export let signalListeners: SignalListeners = {};
-	export let view: View | undefined = undefined;
+	let {
+		spec,
+		options,
+		data,
+		signalListeners,
+		view = $bindable(),
+		onNewView,
+		onError
+	}: {
+		spec: VisualizationSpec;
+		options?: EmbedOptions;
+		data: Record<string, unknown>;
+		signalListeners?: SignalListeners;
+		view: View | undefined;
+		onNewView?: (view: View) => void;
+		onError?: (error: Error) => void;
+	} = $props();
 
-	const mode = 'vega' as Mode;
-	$: vegaOptions = { ...options, mode: mode };
+	const vegaOptions = $derived({ ...options, mode: 'vega' as Mode });
 </script>
 
-<VegaEmbed
-	{spec}
-	{data}
-	{signalListeners}
-	options={vegaOptions}
-	bind:view
-	on:onNewView
-	on:onError
-/>
+<VegaEmbed {spec} {data} {signalListeners} options={vegaOptions} bind:view {onNewView} {onError} />
