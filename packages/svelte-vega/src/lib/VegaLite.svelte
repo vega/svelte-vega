@@ -16,7 +16,7 @@
 		options?: EmbedOptions;
 		data: Record<string, unknown>;
 		signalListeners?: SignalListeners;
-		view: View | undefined;
+		view?: View;
 		onNewView?: (view: View) => void;
 		onError?: (error: Error) => void;
 	} = $props();
