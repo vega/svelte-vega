@@ -2,7 +2,7 @@
 	import type { EmbedOptions, Result } from 'vega-embed';
 	import type { SignalListeners, View, VisualizationSpec } from './types';
 
-	import { onDestroy } from 'svelte';
+	import { onDestroy, untrack } from 'svelte';
 	import vegaEmbed from 'vega-embed';
 
 	import { WIDTH_HEIGHT } from './constants';
@@ -26,7 +26,7 @@
 	}: {
 		options: EmbedOptions;
 		spec: VisualizationSpec;
-		view: View | undefined;
+		view?: View;
 		signalListeners?: SignalListeners;
 		data: Record<string, unknown>;
 		onError?: (error: Error) => void;
@@ -37,66 +37,77 @@
 	let prevOptions: EmbedOptions = $state({});
 	let prevSignalListeners: SignalListeners | undefined = $state(undefined);
 	let prevSpec: VisualizationSpec = $state({});
-	let prevData: Record<string, unknown> = $state({});
 	let chartContainer: HTMLElement | undefined = $state(undefined);
 
 	$effect(() => {
-		if (!shallowEqual(data, prevData)) {
+		data;
+		untrack(() => {
 			update();
-		}
-		prevData = data;
+		});
 	});
 
 	$effect(() => {
-		if (chartContainer !== undefined) {
-			// only create a new view if neccessary
-			if (!shallowEqual(options, prevOptions, WIDTH_HEIGHT)) {
-				createView();
-			} else {
-				const specChanges = computeSpecChanges(
-					combineSpecWithDimension(spec, options),
-					combineSpecWithDimension(prevSpec, prevOptions)
-				);
-				const newSignalListeners = signalListeners;
-				const oldSignalListeners = prevSignalListeners;
+		chartContainer;
+		options;
+		spec;
+		signalListeners;
+		untrack(() => {
+			if (chartContainer !== undefined) {
+				// only create a new view if neccessary
+				if (!shallowEqual(options, prevOptions, WIDTH_HEIGHT)) {
+					createView();
+				} else {
+					const specChanges = computeSpecChanges(
+						combineSpecWithDimension(spec, options),
+						combineSpecWithDimension(prevSpec, prevOptions)
+					);
+					const newSignalListeners = signalListeners;
+					const oldSignalListeners = prevSignalListeners;
 
-				if (specChanges) {
-					if (specChanges.isExpensive) {
-						createView();
-					} else if (result !== undefined) {
-						const areSignalListenersChanged = !shallowEqual(newSignalListeners, oldSignalListeners);
+					if (specChanges) {
+						if (specChanges.isExpensive) {
+							createView();
+						} else if (result !== undefined) {
+							const areSignalListenersChanged = !shallowEqual(
+								newSignalListeners,
+								oldSignalListeners
+							);
+							view = result.view;
+							if (specChanges.width !== false) {
+								view.width(specChanges.width);
+							}
+							if (specChanges.height !== false) {
+								view.height(specChanges.height);
+							}
+							if (areSignalListenersChanged) {
+								if (oldSignalListeners) {
+									removeSignalListenersFromView(view, oldSignalListeners);
+								}
+								if (newSignalListeners) {
+									addSignalListenersToView(view, newSignalListeners);
+								}
+							}
+							view.runAsync();
+						}
+					} else if (
+						!shallowEqual(newSignalListeners, oldSignalListeners) &&
+						result !== undefined
+					) {
 						view = result.view;
-						if (specChanges.width !== false) {
-							view.width(specChanges.width);
+						if (oldSignalListeners) {
+							removeSignalListenersFromView(view, oldSignalListeners);
 						}
-						if (specChanges.height !== false) {
-							view.height(specChanges.height);
-						}
-						if (areSignalListenersChanged) {
-							if (oldSignalListeners) {
-								removeSignalListenersFromView(view, oldSignalListeners);
-							}
-							if (newSignalListeners) {
-								addSignalListenersToView(view, newSignalListeners);
-							}
+						if (newSignalListeners) {
+							addSignalListenersToView(view, newSignalListeners);
 						}
 						view.runAsync();
 					}
-				} else if (!shallowEqual(newSignalListeners, oldSignalListeners) && result !== undefined) {
-					view = result.view;
-					if (oldSignalListeners) {
-						removeSignalListenersFromView(view, oldSignalListeners);
-					}
-					if (newSignalListeners) {
-						addSignalListenersToView(view, newSignalListeners);
-					}
-					view.runAsync();
 				}
+				prevOptions = options;
+				prevSignalListeners = signalListeners;
+				prevSpec = spec;
 			}
-			prevOptions = options;
-			prevSignalListeners = signalListeners;
-			prevSpec = spec;
-		}
+		});
 	});
 
 	onDestroy(() => {
