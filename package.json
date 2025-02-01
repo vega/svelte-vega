@@ -18,7 +18,7 @@
 		"release": "yarn workspace svelte-vega semantic-release --branches main"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.26.0",
+		"@babel/core": "^7.26.7",
 		"@babel/eslint-parser": "^7.25.9",
 		"@eslint/js": "^9.17.0",
 		"@tsconfig/svelte": "^5.0.4",
