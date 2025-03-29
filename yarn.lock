@@ -861,6 +861,11 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.28.tgz#d45e01c4a56f143ee69c54dd6b12eade9e270a73"
   integrity sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==
 
+"@publint/pack@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@publint/pack/-/pack-0.1.2.tgz#1b9a9567423262093e4a73e77697b65bf622f8c9"
+  integrity sha512-S+9ANAvUmjutrshV4jZjaiG8XQyuJIZ8a4utWmN/vW1sgQ9IfBnPndwkmQYw53QmouOIytT874u65HEmu6H5jw==
+
 "@rollup/rollup-android-arm-eabi@4.37.0":
   version "4.37.0"
   resolved "https://registry.yarnpkg.com/@rollup/rollup-android-arm-eabi/-/rollup-android-arm-eabi-4.37.0.tgz#9bedc746a97fe707154086365f269ced92ff4aa9"
@@ -3213,17 +3218,6 @@ glob@^10.2.2, glob@^10.3.10, glob@^10.3.7, glob@^10.4.5:
     package-json-from-dist "^1.0.0"
     path-scurry "^1.11.1"
 
-glob@^8.0.1:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-8.1.0.tgz#d388f656593ef708ee3e34640fdfb99a9fd1c33e"
-  integrity sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==
-  dependencies:
-    fs.realpath "^1.0.0"
-    inflight "^1.0.4"
-    inherits "2"
-    minimatch "^5.0.1"
-    once "^1.3.0"
-
 global-directory@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/global-directory/-/global-directory-4.0.1.tgz#4d7ac7cfd2cb73f304c53b8810891748df5e361e"
@@ -3441,13 +3435,6 @@ ieee754@^1.1.13:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
   integrity sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==
-
-ignore-walk@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/ignore-walk/-/ignore-walk-5.0.1.tgz#5f199e23e1288f518d90358d461387788a154776"
-  integrity sha512-yemi4pMf51WKT7khInJqAvsIGzoqYXblnsz0ql8tM+yi1EKYTY1evX4NAbJrLL/Aanr2HyZeluqU+Oi7MGHokw==
-  dependencies:
-    minimatch "^5.0.1"
 
 ignore-walk@^7.0.0:
   version "7.0.0"
@@ -4357,13 +4344,6 @@ minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
   dependencies:
     brace-expansion "^1.1.7"
 
-minimatch@^5.0.1:
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.1.6.tgz#1cfcb8cf5522ea69952cd2af95ae09477f122a96"
-  integrity sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==
-  dependencies:
-    brace-expansion "^2.0.1"
-
 minimatch@^9.0.0, minimatch@^9.0.4, minimatch@^9.0.5:
   version "9.0.5"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-9.0.5.tgz#d74f9dd6b57d83d8e98cfb82133b03978bc929e5"
@@ -4610,13 +4590,6 @@ npm-audit-report@^6.0.0:
   resolved "https://registry.yarnpkg.com/npm-audit-report/-/npm-audit-report-6.0.0.tgz#0262e5e2b674fabf0ea47e900fc7384b83de0fbb"
   integrity sha512-Ag6Y1irw/+CdSLqEEAn69T8JBgBThj5mw0vuFIKeP7hATYuQuS5jkMjK6xmVB8pr7U4g5Audbun0lHhBDMIBRA==
 
-npm-bundled@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-2.0.1.tgz#94113f7eb342cd7a67de1e789f896b04d2c600f4"
-  integrity sha512-gZLxXdjEzE/+mOstGDqR6b0EkhJ+kM6fxM6vUuckuctuVPh80Q6pw/rSZj9s4Gex9GxWtIicO1pc8DB9KZWudw==
-  dependencies:
-    npm-normalize-package-bin "^2.0.0"
-
 npm-bundled@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-4.0.0.tgz#f5b983f053fe7c61566cf07241fab2d4e9d513d3"
@@ -4630,11 +4603,6 @@ npm-install-checks@^7.1.0, npm-install-checks@^7.1.1:
   integrity sha512-u6DCwbow5ynAX5BdiHQ9qvexme4U3qHW3MWe5NqH+NeBm0LbiH6zvGjNNew1fY+AZZUtVHbOPF3j7mJxbUzpXg==
   dependencies:
     semver "^7.1.1"
-
-npm-normalize-package-bin@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/npm-normalize-package-bin/-/npm-normalize-package-bin-2.0.0.tgz#9447a1adaaf89d8ad0abe24c6c84ad614a675fff"
-  integrity sha512-awzfKUO7v0FscrSpRoogyNm0sajikhBWpU0QMrW09AMi9n1PoKU6WaIqUzuJSQnpciZZmJ/jMZ2Egfmb/9LiWQ==
 
 npm-normalize-package-bin@^4.0.0:
   version "4.0.0"
@@ -4650,16 +4618,6 @@ npm-package-arg@^12.0.0:
     proc-log "^5.0.0"
     semver "^7.3.5"
     validate-npm-package-name "^6.0.0"
-
-npm-packlist@^5.1.3:
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/npm-packlist/-/npm-packlist-5.1.3.tgz#69d253e6fd664b9058b85005905012e00e69274b"
-  integrity sha512-263/0NGrn32YFYi4J533qzrQ/krmmrWwhKkzwTuM4f/07ug51odoaNjUexxO4vxlzURHcmYMH1QjvHjsNDKLVg==
-  dependencies:
-    glob "^8.0.1"
-    ignore-walk "^5.0.1"
-    npm-bundled "^2.0.0"
-    npm-normalize-package-bin "^2.0.0"
 
 npm-packlist@^9.0.0:
   version "9.0.0"
@@ -4984,6 +4942,13 @@ package-json-from-dist@^1.0.0:
   resolved "https://registry.yarnpkg.com/package-json-from-dist/-/package-json-from-dist-1.0.1.tgz#4f1471a010827a86f94cfd9b0727e36d267de505"
   integrity sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==
 
+package-manager-detector@^0.2.9:
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/package-manager-detector/-/package-manager-detector-0.2.11.tgz#3af0b34f99d86d24af0a0620603d2e1180d05c9c"
+  integrity sha512-BEnLolu+yuz22S56CU1SUKq3XC3PkwD5wv4ikR4MfGvnRVcmzXR9DwSlW2fEamyTPyXHomBJRzgapeuBvRNzJQ==
+  dependencies:
+    quansync "^0.2.7"
+
 pacote@^19.0.0, pacote@^19.0.1:
   version "19.0.1"
   resolved "https://registry.yarnpkg.com/pacote/-/pacote-19.0.1.tgz#66d22dbd274ed8a7c30029d70eb8030f5151e6fc"
@@ -5306,12 +5271,13 @@ proto-list@~1.2.1:
   resolved "https://registry.yarnpkg.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
   integrity sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==
 
-publint@^0.2.12:
-  version "0.2.12"
-  resolved "https://registry.yarnpkg.com/publint/-/publint-0.2.12.tgz#d25cd6bd243d5bdd640344ecdddb3eeafdcc4059"
-  integrity sha512-YNeUtCVeM4j9nDiTT2OPczmlyzOkIXNtdDZnSuajAxS/nZ6j3t7Vs9SUB4euQNddiltIwu7Tdd3s+hr08fAsMw==
+publint@^0.3.9:
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/publint/-/publint-0.3.9.tgz#4d0bea2fa6caf6b20f6940a121111287c7264868"
+  integrity sha512-irTwfRfYW38vomkxxoiZQtFtUOQKpz5m0p9Z60z4xpXrl1KmvSrX1OMARvnnolB5usOXeNfvLj6d/W3rwXKfBQ==
   dependencies:
-    npm-packlist "^5.1.3"
+    "@publint/pack" "^0.1.2"
+    package-manager-detector "^0.2.9"
     picocolors "^1.1.1"
     sade "^1.8.1"
 
@@ -5324,6 +5290,11 @@ qrcode-terminal@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/qrcode-terminal/-/qrcode-terminal-0.12.0.tgz#bb5b699ef7f9f0505092a3748be4464fe71b5819"
   integrity sha512-EXtzRZmC+YGmGlDFbXKxQiMZNwCLEO6BANKXG4iCtSIM0yqc/pappSx3RIKr4r0uh5JsBckOXeKrB3Iz7mdQpQ==
+
+quansync@^0.2.7:
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/quansync/-/quansync-0.2.10.tgz#32053cf166fa36511aae95fc49796116f2dc20e1"
+  integrity sha512-t41VRkMYbkHyCYmOvx/6URnN80H7k4X0lLdBMGsz+maAwrJQYB1djpV6vHrQIBE0WBSGqhtEHrK9U3DWWH8v7A==
 
 queue-microtask@^1.2.2:
   version "1.2.3"
