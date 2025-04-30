@@ -61,7 +61,7 @@
 		"svelte": "^5.0.0",
 		"vega": "^6.0.0",
 		"vega-embed": "^7.0.0",
-		"vega-lite": "^5.0.0"
+		"vega-lite": "^6.0.0"
 	},
 	"publishConfig": {
 		"access": "public"
