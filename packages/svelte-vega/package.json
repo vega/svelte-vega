@@ -49,7 +49,7 @@
 		"eslint-config-prettier": "^10.1.1",
 		"eslint-plugin-svelte": "^3.5.0",
 		"prettier": "^3.5.3",
-		"prettier-plugin-svelte": "^3.3.3",
+		"prettier-plugin-svelte": "^3.4.0",
 		"publint": "^0.2.12",
 		"svelte": "^5.25.3",
 		"svelte-check": "^4.1.5",
