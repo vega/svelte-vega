@@ -45,7 +45,7 @@
 		"@sveltejs/package": "^2.3.10",
 		"@typescript-eslint/eslint-plugin": "^8.33.0",
 		"@typescript-eslint/parser": "^8.29.0",
-		"eslint": "^9.23.0",
+		"eslint": "^9.30.1",
 		"eslint-config-prettier": "^10.1.1",
 		"eslint-plugin-svelte": "^3.5.0",
 		"prettier": "^3.5.3",
