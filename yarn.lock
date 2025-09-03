@@ -1089,10 +1089,10 @@
     set-cookie-parser "^2.6.0"
     sirv "^3.0.0"
 
-"@sveltejs/package@^2.3.10":
-  version "2.3.11"
-  resolved "https://registry.yarnpkg.com/@sveltejs/package/-/package-2.3.11.tgz#bf79d05d4bc0523fd6b8112f16c2dfbf7c3ddd6e"
-  integrity sha512-DSMt2U0XNAdoQBYksrmgQi5dKy7jUTVDJLiagS/iXF7AShjAmTbGJQKruBuT/FfYAWvNxfQTSjkXU8eAIjVeNg==
+"@sveltejs/package@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@sveltejs/package/-/package-2.5.0.tgz#10556cf4f4a2fa8df78d620c9c699ace361e3728"
+  integrity sha512-qpB91oWEraOXA4l1ldpGtMc/rLCthbf1ACw/1oroKxvT3sd2NXPd/+NLhIk5FCvd0IUSEZGYa86K+D94GWW2Zw==
   dependencies:
     chokidar "^4.0.3"
     kleur "^4.1.5"
