@@ -26,5 +26,13 @@
 	const vegaOptions = $derived({ ...options, mode: 'vega' as Mode });
 </script>
 
-<VegaEmbed {spec} {data} {signalListeners} options={vegaOptions} bind:view {onNewView} {onError} {style} />
-
+<VegaEmbed
+	{spec}
+	{data}
+	{signalListeners}
+	options={vegaOptions}
+	bind:view
+	{onNewView}
+	{onError}
+	{style}
+/>
