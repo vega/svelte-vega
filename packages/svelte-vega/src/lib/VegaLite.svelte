@@ -10,7 +10,8 @@
 		signalListeners,
 		view = $bindable(),
 		onNewView,
-		onError
+		onError,
+		style
 	}: {
 		spec: VisualizationSpec;
 		options?: EmbedOptions;
@@ -19,6 +20,7 @@
 		view?: View;
 		onNewView?: (view: View) => void;
 		onError?: (error: Error) => void;
+		style?: string;
 	} = $props();
 
 	const vegaLiteOptions = $derived({ ...options, mode: 'vega-lite' as Mode });
@@ -32,4 +34,5 @@
 	bind:view
 	{onNewView}
 	{onError}
+	{style}
 />

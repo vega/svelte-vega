@@ -10,7 +10,8 @@
 		signalListeners,
 		view = $bindable(),
 		onNewView,
-		onError
+		onError,
+		style
 	}: {
 		spec: VisualizationSpec;
 		options?: EmbedOptions;
@@ -19,9 +20,11 @@
 		view?: View;
 		onNewView?: (view: View) => void;
 		onError?: (error: Error) => void;
+		style?: string;
 	} = $props();
 
 	const vegaOptions = $derived({ ...options, mode: 'vega' as Mode });
 </script>
 
-<VegaEmbed {spec} {data} {signalListeners} options={vegaOptions} bind:view {onNewView} {onError} />
+<VegaEmbed {spec} {data} {signalListeners} options={vegaOptions} bind:view {onNewView} {onError} {style} />
+
