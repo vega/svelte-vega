@@ -22,7 +22,8 @@
 		signalListeners,
 		data,
 		onError,
-		onNewView
+		onNewView,
+		style = ''
 	}: {
 		options: EmbedOptions;
 		spec: VisualizationSpec;
@@ -31,6 +32,7 @@
 		data: Record<string, unknown>;
 		onError?: (error: Error) => void;
 		onNewView?: (view: View) => void;
+		style?: string;
 	} = $props();
 
 	let result: Result | undefined = $state(undefined);
@@ -158,4 +160,4 @@
 	}
 </script>
 
-<div bind:this={chartContainer}></div>
+<div bind:this={chartContainer} {style}></div>
