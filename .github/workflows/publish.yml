@@ -25,3 +25,5 @@ jobs:
       - name: Install Node dependencies
         run: yarn --frozen-lockfile
       - run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
