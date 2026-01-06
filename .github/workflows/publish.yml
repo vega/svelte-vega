@@ -5,6 +5,7 @@ on: workflow_dispatch
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: production
 
     name: Make a release and publish to NPM
 
