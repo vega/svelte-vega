@@ -15,7 +15,8 @@
 		"sample:svelte": "yarn build && yarn workspace svelte-vega-sample dev",
 		"sample:sveltekit": "yarn build && yarn workspace sveltekit-vega-sample dev",
 		"clean": "rm -rf ./packages/svelte-vega/dist && rm -rf && rm -rf ./packages/sample-project/public/build",
-		"release": "yarn workspace svelte-vega semantic-release --branches main"
+		"release": "yarn workspace svelte-vega semantic-release --branches main",
+		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.28.3",
@@ -31,6 +32,8 @@
 		"eslint-plugin-prettier": "^5.5.5",
 		"eslint-plugin-promise": "^7.2.1",
 		"eslint-plugin-svelte": "^3.13.1",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.7",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.1",
 		"semantic-release": "^25.0.2",
@@ -53,5 +56,8 @@
 		"commitizen": {
 			"path": "./node_modules/cz-conventional-changelog"
 		}
+	},
+	"lint-staged": {
+		"*.{js,ts,svelte,mjs,cjs}": "eslint --fix"
 	}
 }
