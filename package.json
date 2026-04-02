@@ -30,7 +30,7 @@
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-prettier": "^5.5.5",
 		"eslint-plugin-promise": "^7.2.1",
-		"eslint-plugin-svelte": "^3.13.1",
+		"eslint-plugin-svelte": "^3.16.0",
 		"prettier": "^3.8.1",
 		"prettier-plugin-svelte": "^3.4.1",
 		"semantic-release": "^25.0.2",
