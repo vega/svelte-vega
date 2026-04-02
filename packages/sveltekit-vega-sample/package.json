@@ -11,7 +11,7 @@
 	},
 	"type": "module",
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^7.0.0",
+		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/kit": "^2.49.2",
 		"svelte": "^5.38.6",
 		"svelte-check": "^4.3.6",
