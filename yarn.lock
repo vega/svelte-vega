@@ -1225,10 +1225,10 @@
     magic-string "^0.30.17"
     vitefu "^1.0.6"
 
-"@tsconfig/svelte@^5.0.6":
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/@tsconfig/svelte/-/svelte-5.0.6.tgz#1b63201d1279aebe973436cd3bb6303d474d0688"
-  integrity sha512-yGxYL0I9eETH1/DR9qVJey4DAsCdeau4a9wYPKuXfEhm8lFO8wg+LLYJjIpAm6Fw7HSlhepPhYPDop75485yWQ==
+"@tsconfig/svelte@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@tsconfig/svelte/-/svelte-5.0.8.tgz#4c0c85e17cf8efb1e079459e1cebbeed80680509"
+  integrity sha512-UkNnw1/oFEfecR8ypyHIQuWYdkPvHiwcQ78sh+ymIiYoF+uc5H1UBetbjyqT+vgGJ3qQN6nhucJviX6HesWtKQ==
 
 "@tufjs/canonical-json@2.0.0":
   version "2.0.0"
