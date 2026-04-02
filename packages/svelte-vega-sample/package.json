@@ -17,7 +17,7 @@
 		"vega-lite": "^6.4.2"
 	},
 	"devDependencies": {
-		"@sveltejs/vite-plugin-svelte": "^5.1.1",
+		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tsconfig/svelte": "^5.0.8",
 		"svelte": "^5.38.6",
 		"svelte-check": "^4.4.6",
