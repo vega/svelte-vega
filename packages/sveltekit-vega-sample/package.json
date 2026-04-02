@@ -12,7 +12,7 @@
 	"type": "module",
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^7.0.1",
-		"@sveltejs/kit": "^2.49.2",
+		"@sveltejs/kit": "^2.55.0",
 		"svelte": "^5.38.6",
 		"svelte-check": "^4.3.6",
 		"tslib": "^2.8.1",
