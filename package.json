@@ -22,7 +22,7 @@
 		"@babel/eslint-parser": "^7.29.7",
 		"@eslint/js": "^10.0.1",
 		"@tsconfig/svelte": "^5.0.8",
-		"commitizen": "^4.3.1",
+		"commitizen": "^4.3.2",
 		"cz-conventional-changelog": "3.3.0",
 		"eslint": "^9.39.2",
 		"eslint-config-prettier": "^10.1.8",
