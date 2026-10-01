@@ -5773,10 +5773,10 @@ scule@^1.3.0:
   resolved "https://registry.yarnpkg.com/scule/-/scule-1.3.0.tgz#6efbd22fd0bb801bdcc585c89266a7d2daa8fbd3"
   integrity sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==
 
-semantic-release@^25.0.5:
-  version "25.0.5"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-25.0.5.tgz#67be786556e40e8e81c591a12f38877f1eee6052"
-  integrity sha512-mn61SUJwtM8ThrWn2WmgLVpwVJeG/hPSupua1psdMoufmwRIPyvRLkRkL0JDXkP67OntlLWUYnBnfVc8EDO3/g==
+semantic-release@^25.0.9:
+  version "25.0.9"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-25.0.9.tgz#8f768a079df5b432adab0807459afa308a535097"
+  integrity sha512-bxve7csK0/Txr++CkfrmV+X1r4jqiSOw2WsSad9E2S68R+ZfLBwDn8IceM8WfiOmKQIHgsQc1cNA8Dzg7U75pg==
   dependencies:
     "@semantic-release/commit-analyzer" "^13.0.1"
     "@semantic-release/error" "^4.0.0"
