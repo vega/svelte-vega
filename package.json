@@ -39,7 +39,7 @@
 		"typescript-eslint": "^8.58.0"
 	},
 	"engines": {
-		"node": ">16",
+		"node": ">=22",
 		"npm": ">=8",
 		"yarn": ">=1.13.0"
 	},
