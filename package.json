@@ -35,7 +35,7 @@
 		"prettier-plugin-svelte": "^4.1.1",
 		"semantic-release": "^25.0.9",
 		"svelte": "^5.56.4",
-		"typescript": "^5.9.3",
+		"typescript": "^6.0.3",
 		"typescript-eslint": "^8.58.0"
 	},
 	"engines": {
